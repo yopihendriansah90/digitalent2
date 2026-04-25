@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>DigiTalent - Empowering Digital Talent</title>
     <meta name="description" content="DigiTalent menyediakan IT Training, sertifikasi, dan IT Outsourcing untuk mendukung transformasi digital perusahaan." />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,6 +36,23 @@
           linear-gradient(rgba(0, 199, 242, 0.08) 1px, transparent 1px),
           linear-gradient(90deg, rgba(0, 199, 242, 0.08) 1px, transparent 1px);
         background-size: 34px 34px;
+      }
+      .faq-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 420ms ease, opacity 300ms ease, transform 420ms ease;
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      .faq-item.is-open .faq-panel {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .faq-icon {
+        transition: transform 300ms ease;
+      }
+      .faq-item.is-open .faq-icon {
+        transform: rotate(45deg);
       }
     </style>
   </head>
@@ -75,28 +95,30 @@
               <span class="rounded-full border border-brand-orange/40 bg-white px-4 py-2 text-sm font-semibold text-brand-navy">Authorized CompTIA Partner Ecosystem</span>
             </div>
             <h1 class="max-w-4xl text-4xl font-black leading-tight tracking-normal text-brand-navy md:text-6xl">Empowering Digital Talent, Enabling Global Success</h1>
-            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">DigiTalent membangun profesional digital melalui training terstruktur dan menyediakan talenta IT siap industri yang selaras dengan kebutuhan bisnis nyata.</p>
+            <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">PT. Systech Talenta Digital, known as DigiTalent, was founded in August 2025 with a clear purpose: to support digital transformation through capable, industry-ready talent. As part of the SGI Asia Group, we focus on two core services: IT Training and IT Outsourcing. We build professionals through structured, practical training and provide trusted talent aligned with real business needs. Guided by integrity, professionalism, and quality, we deliver measurable value for our partners and support sustainable digital growth.</p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a class="rounded-md bg-brand-blue px-6 py-3 text-center font-bold text-white shadow-soft hover:bg-brand-navy" href="training.html">Lihat Program Training</a>
+              <a class="rounded-md bg-brand-blue px-6 py-3 text-center font-bold text-white shadow-soft hover:bg-brand-navy" href="training.html">Daftar Training</a>
               <a class="rounded-md border border-brand-blue px-6 py-3 text-center font-bold text-brand-blue hover:bg-brand-sky" href="outsourcing.html">Request IT Talent</a>
             </div>
           </div>
           <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-soft">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-md bg-brand-navy p-5 text-white"><div class="text-3xl font-black">500+</div><div class="mt-1 text-sm text-white/75">Training Participants</div></div>
-              <div class="rounded-md bg-brand-blue p-5 text-white"><div class="text-3xl font-black">50+</div><div class="mt-1 text-sm text-white/75">Certifications</div></div>
-              <div class="rounded-md bg-brand-cyan p-5 text-brand-navy"><div class="text-3xl font-black">100+</div><div class="mt-1 text-sm text-brand-navy/75">Training Delivered</div></div>
-              <div class="rounded-md bg-brand-orange p-5 text-brand-navy"><div class="text-3xl font-black">2</div><div class="mt-1 text-sm text-brand-navy/75">Core Services</div></div>
+            <p class="text-sm font-bold uppercase tracking-wide text-brand-blue">Core Services</p>
+            <div class="mt-5 grid gap-4">
+              <article class="rounded-md bg-brand-navy p-5 text-white">
+                <h2 class="text-xl font-extrabold">IT Training</h2>
+                <p class="mt-2 text-sm leading-6 text-white/75">Structured learning, mentoring, certification preparation, hands-on labs, and real-world scenarios.</p>
+              </article>
+              <article class="rounded-md bg-brand-blue p-5 text-white">
+                <h2 class="text-xl font-extrabold">IT Outsourcing</h2>
+                <p class="mt-2 text-sm leading-6 text-white/75">Trusted IT talent for short-term and long-term business needs with professional selection and faster onboarding.</p>
+              </article>
             </div>
-            <div class="mt-6 rounded-md border border-slate-200 p-5">
-              <p class="text-sm font-bold uppercase tracking-wide text-brand-blue">Focus Area</p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded bg-slate-100 px-3 py-1 text-sm">Cybersecurity</span>
-                <span class="rounded bg-slate-100 px-3 py-1 text-sm">Data & AI</span>
-                <span class="rounded bg-slate-100 px-3 py-1 text-sm">GRC</span>
-                <span class="rounded bg-slate-100 px-3 py-1 text-sm">Software Development</span>
-                <span class="rounded bg-slate-100 px-3 py-1 text-sm">Project Management</span>
-              </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-semibold text-brand-blue">Cybersecurity</span>
+              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-semibold text-brand-blue">Data & AI</span>
+              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-semibold text-brand-blue">GRC</span>
+              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-semibold text-brand-blue">Software Development</span>
+              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-semibold text-brand-blue">Project Management</span>
             </div>
           </div>
         </div>
@@ -105,21 +127,34 @@
       <section class="py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div class="max-w-3xl">
-            <p class="font-bold uppercase tracking-wide text-brand-blue">Services</p>
-            <h2 class="mt-3 text-3xl font-black text-brand-navy md:text-4xl">Solusi training dan talent supply dalam satu ekosistem.</h2>
+
+            <h2 class="mt-3 text-3xl font-extrabold text-brand-navy md:text-4xl">Value</h2>
           </div>
-          <div class="mt-10 grid gap-6 lg:grid-cols-2">
-            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft">
-              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-bold text-brand-blue">IT Training</span>
-              <h3 class="mt-5 text-2xl font-black text-brand-navy">Training, mentoring, dan sertifikasi yang siap diterapkan.</h3>
-              <p class="mt-4 leading-7 text-slate-600">Program disusun untuk kebutuhan industri dengan hands-on labs, project-based assessment, real-world scenarios, dan instruktur praktisi bersertifikasi.</p>
-              <a class="mt-6 inline-flex font-bold text-brand-blue" href="training.html">Explore Training -></a>
+          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <span class="text-sm font-extrabold text-brand-blue">01</span>
+              <h3 class="mt-4 text-xl font-extrabold text-brand-navy">Integrity</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Upholding honesty, responsibility, and professional ethics.</p>
             </article>
-            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft">
-              <span class="rounded bg-brand-sky px-3 py-1 text-sm font-bold text-brand-blue">IT Outsourcing</span>
-              <h3 class="mt-5 text-2xl font-black text-brand-navy">Talenta IT terkurasi untuk kebutuhan jangka pendek dan panjang.</h3>
-              <p class="mt-4 leading-7 text-slate-600">Kami membantu perusahaan mendapatkan IT expert dengan proses seleksi profesional, validasi pengalaman, dan onboarding yang lebih cepat.</p>
-              <a class="mt-6 inline-flex font-bold text-brand-blue" href="outsourcing.html">Explore Outsourcing -></a>
+            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <span class="text-sm font-extrabold text-brand-blue">02</span>
+              <h3 class="mt-4 text-xl font-extrabold text-brand-navy">Adaptive</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Continuously adapting to the latest technological advancements.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <span class="text-sm font-extrabold text-brand-blue">03</span>
+              <h3 class="mt-4 text-xl font-extrabold text-brand-navy">Excellence</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Committed to delivering the best results and services.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <span class="text-sm font-extrabold text-brand-blue">04</span>
+              <h3 class="mt-4 text-xl font-extrabold text-brand-navy">Collaboration</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Building a strong ecosystem bridging academia, professionals, communities, and the industry.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <span class="text-sm font-extrabold text-brand-blue">05</span>
+              <h3 class="mt-4 text-xl font-extrabold text-brand-navy">Empowerment</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Providing opportunities for individuals to grow and create a positive impact in the digital world.</p>
             </article>
           </div>
         </div>
@@ -128,15 +163,30 @@
       <section class="bg-brand-navy py-16 text-white lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div class="max-w-3xl">
-            <p class="font-bold uppercase tracking-wide text-brand-cyan">Why Choose Us</p>
-            <h2 class="mt-3 text-3xl font-black md:text-4xl">Dibangun di atas standar global dan pengalaman industri nyata.</h2>
+
+            <h2 class="mt-3 text-3xl font-extrabold md:text-4xl">Progress Counter?</h2>
           </div>
-          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-            <div class="rounded-lg border border-white/15 p-5"><h3 class="font-black">SGI Asia Ecosystem</h3><p class="mt-3 text-sm leading-6 text-white/70">Akses jaringan industri dan insight kebutuhan IT Indonesia.</p></div>
-            <div class="rounded-lg border border-white/15 p-5"><h3 class="font-black">Experienced Professionals</h3><p class="mt-3 text-sm leading-6 text-white/70">Dibimbing praktisi bersertifikasi dengan pengalaman proyek nyata.</p></div>
-            <div class="rounded-lg border border-white/15 p-5"><h3 class="font-black">Practical Learning</h3><p class="mt-3 text-sm leading-6 text-white/70">Hands-on labs, case study, dan assessment berbasis proyek.</p></div>
-            <div class="rounded-lg border border-white/15 p-5"><h3 class="font-black">Career Support</h3><p class="mt-3 text-sm leading-6 text-white/70">Dukungan rekrutmen dan pengembangan karier untuk peserta.</p></div>
-            <div class="rounded-lg border border-white/15 p-5"><h3 class="font-black">Quality Commitment</h3><p class="mt-3 text-sm leading-6 text-white/70">Fokus pada kualitas layanan dan kepuasan klien.</p></div>
+          <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-lg border border-white/15 p-6">
+              <div class="text-4xl font-extrabold text-brand-cyan">500+</div>
+              <p class="mt-2 font-bold">Completed Training</p>
+              <p class="mt-2 text-sm leading-6 text-white/70">More than 500 participants.</p>
+            </div>
+            <div class="rounded-lg border border-white/15 p-6">
+              <div class="text-4xl font-extrabold text-brand-cyan">50+</div>
+              <p class="mt-2 font-bold">Completed Certification</p>
+              <p class="mt-2 text-sm leading-6 text-white/70">More than 50 certifications.</p>
+            </div>
+            <div class="rounded-lg border border-white/15 p-6">
+              <div class="text-4xl font-extrabold text-brand-cyan">500+</div>
+              <p class="mt-2 font-bold">Company Client</p>
+              <p class="mt-2 text-sm leading-6 text-white/70">More than 500 participants.</p>
+            </div>
+            <div class="rounded-lg border border-white/15 p-6">
+              <div class="text-4xl font-extrabold text-brand-cyan">100+</div>
+              <p class="mt-2 font-bold">Total Training</p>
+              <p class="mt-2 text-sm leading-6 text-white/70">More than 100 training programs delivered.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -144,39 +194,122 @@
       <section class="py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div class="max-w-3xl">
-            <p class="font-bold uppercase tracking-wide text-brand-blue">FAQ</p>
-            <h2 class="mt-3 text-3xl font-black text-brand-navy md:text-4xl">Pertanyaan umum</h2>
+            
+            <h2 class="mt-3 text-3xl font-extrabold text-brand-navy md:text-4xl">Why Choose Us</h2>
           </div>
-          <div class="mt-8 divide-y divide-slate-200 rounded-lg border border-slate-200">
-            <details class="group p-6" open>
-              <summary class="cursor-pointer list-none font-bold text-brand-navy">Mengapa training di DigiTalent?</summary>
-              <p class="mt-3 leading-7 text-slate-600">DigiTalent menggabungkan kurikulum praktis, mentor berpengalaman, case study industri, dan ekosistem SGI Asia untuk memastikan training relevan dengan kebutuhan kerja.</p>
-            </details>
-            <details class="group p-6">
-              <summary class="cursor-pointer list-none font-bold text-brand-navy">Bagaimana memilih training yang tepat?</summary>
-              <p class="mt-3 leading-7 text-slate-600">Tim konsultan dapat membantu memetakan kebutuhan kompetensi, level peserta, target sertifikasi, dan format kelas yang paling sesuai.</p>
-            </details>
-            <details class="group p-6">
-              <summary class="cursor-pointer list-none font-bold text-brand-navy">Fasilitas apa saja yang disediakan?</summary>
-              <p class="mt-3 leading-7 text-slate-600">Program dapat mencakup direct online access, virtual learning support, hands-on labs, project-based assessment, dan materi berbasis real-world scenarios.</p>
-            </details>
+          <div class="mt-10 grid gap-6 lg:grid-cols-2">
+            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft">
+              <span class="text-sm font-extrabold text-brand-blue">01</span>
+              <h3 class="mt-3 text-2xl font-extrabold text-brand-navy">Affiliate with SGI Asia as an Authorized CompTIA Partner</h3>
+              <p class="mt-4 leading-7 text-slate-600">Our curriculum and services align with global industry standards, continuously updated to remain relevant with real-world case studies, the evolving cyber threat landscape, and current industry demands.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft">
+              <span class="text-sm font-extrabold text-brand-blue">02</span>
+              <h3 class="mt-3 text-2xl font-extrabold text-brand-navy">Experienced Professionals</h3>
+              <p class="mt-4 leading-7 text-slate-600">We are backed by certified experts and professionals with proven hands-on experience in executing real-world projects.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft">
+              <span class="text-sm font-extrabold text-brand-blue">03</span>
+              <h3 class="mt-3 text-2xl font-extrabold text-brand-navy">Backed by a Robust Ecosystem</h3>
+              <p class="mt-4 leading-7 text-slate-600">Our competitive edge is reinforced by the SGI Asia Ecosystem, granting us access to an extensive client network and deep insights into Indonesia's specific IT landscape and requirements.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft">
+              <span class="text-sm font-extrabold text-brand-blue">04</span>
+              <h3 class="mt-3 text-2xl font-extrabold text-brand-navy">Solution-Oriented Approach & Career Support</h3>
+              <p class="mt-4 leading-7 text-slate-600">We provide comprehensive recruitment support and career development, empowering our trainees to solve practical IT challenges effectively.</p>
+            </article>
+            <article class="rounded-lg border border-slate-200 bg-white p-7 shadow-soft lg:col-span-2">
+              <span class="text-sm font-extrabold text-brand-blue">05</span>
+              <h3 class="mt-3 text-2xl font-extrabold text-brand-navy">Unwavering Commitment to Quality</h3>
+              <p class="mt-4 max-w-4xl leading-7 text-slate-600">We maintain an absolute commitment to quality and client satisfaction, driven by excellence, professionalism, and delivering impactful results for your business.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 py-16 lg:py-20">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div class="rounded-lg bg-slate-50 lg:sticky lg:top-28">
+            <h2 class="text-3xl font-extrabold leading-tight text-brand-navy md:text-4xl">FAQ & Link Pendaftaran</h2>
+            <p class="mt-5 leading-7 text-slate-600">Tim DigiTalent dapat membantu memetakan kebutuhan training, sertifikasi, maupun penyediaan talenta IT sesuai target bisnis Anda.</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <a class="rounded-md bg-brand-blue px-6 py-3 text-center font-bold text-white shadow-soft hover:bg-brand-navy" href="contact.html">Konsultasi Program</a>
+              <a class="rounded-md border border-brand-blue bg-white px-6 py-3 text-center font-bold text-brand-blue hover:bg-brand-sky" href="training.html">Lihat Pilihan Training</a>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+            <article class="faq-item is-open border-b border-slate-200">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="true">
+                <span>Mengapa Training di DigiTalent?</span>
+                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
+              </button>
+              <div class="faq-panel">
+                <p class="px-6 pb-7 leading-7 text-slate-600">DigiTalent menggabungkan kurikulum praktis, mentor berpengalaman, case study industri, hands-on labs, dan ekosistem SGI Asia untuk memastikan training relevan dengan kebutuhan kerja nyata.</p>
+              </div>
+            </article>
+            <article class="faq-item border-b border-slate-200">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="false">
+                <span>Bagaimana memilih training yang tepat?</span>
+                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
+              </button>
+              <div class="faq-panel">
+                <p class="px-6 pb-7 leading-7 text-slate-600">Pemilihan training dapat dimulai dari kebutuhan kompetensi, level peserta, target sertifikasi, format kelas, dan rencana penerapan di pekerjaan. Tim DigiTalent dapat membantu menyusun rekomendasi program yang sesuai.</p>
+              </div>
+            </article>
+            <article class="faq-item border-b border-slate-200">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="false">
+                <span>Fasilitas apa saja yang disediakan?</span>
+                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
+              </button>
+              <div class="faq-panel">
+                <p class="px-6 pb-7 leading-7 text-slate-600">Program dapat mencakup direct online access, interactive discussion with trainers, virtual learning support, hands-on labs, project-based assessment, dan real-world scenarios.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="false">
+                <span>Apakah tersedia training untuk perusahaan?</span>
+                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
+              </button>
+              <div class="faq-panel">
+                <p class="px-6 pb-7 leading-7 text-slate-600">Ya. DigiTalent menyediakan public class, online/offline class, hybrid learning, corporate in-house training, dan ODP yang dapat disesuaikan dengan kebutuhan tim.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="bg-brand-navy py-12 text-white">
-      <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-4">
-        <div class="md:col-span-2">
-          <img src="Logo/PNG/Horizontal_Background Gelap.png" alt="DigiTalent" class="h-14 w-auto" />
-          <p class="mt-5 max-w-md leading-7 text-white/70">DigiTalent membantu organisasi membangun talenta digital dan menyediakan profesional IT siap industri.</p>
-        </div>
-        <div><h3 class="font-black">Pages</h3><ul class="mt-4 space-y-2 text-white/70"><li><a href="about.html" class="hover:text-brand-cyan">About</a></li><li><a href="services.html" class="hover:text-brand-cyan">Services</a></li><li><a href="portfolio.html" class="hover:text-brand-cyan">Portfolio</a></li></ul></div>
-        <div><h3 class="font-black">Contact</h3><ul class="mt-4 space-y-2 text-white/70"><li><a href="contact.html" class="hover:text-brand-cyan">Contact Form</a></li><li><a href="https://wa.me/628131337687" class="hover:text-brand-cyan">WhatsApp</a></li><li><a href="https://www.instagram.com/digitalent.systech" class="hover:text-brand-cyan">Instagram</a></li></ul></div>
-      </div>
-      <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-6 text-sm text-white/55">Copyright (c) 2026 PT. Systech Talenta Digital. All Rights Reserved.</div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="footer.js"></script>
+    <script>
+      const faqItems = document.querySelectorAll(".faq-item");
 
-    <a href="https://wa.me/628131337687" class="fixed bottom-5 right-5 rounded-full bg-brand-cyan px-5 py-3 text-sm font-black text-brand-navy shadow-soft hover:bg-brand-orange">WhatsApp</a>
+      function setFaqPanel(item, open) {
+        const button = item.querySelector(".faq-toggle");
+        const panel = item.querySelector(".faq-panel");
+
+        item.classList.toggle("is-open", open);
+        button.setAttribute("aria-expanded", open ? "true" : "false");
+        panel.style.maxHeight = open ? `${panel.scrollHeight}px` : "0px";
+      }
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector(".faq-toggle");
+        setFaqPanel(item, item.classList.contains("is-open"));
+
+        button.addEventListener("click", () => {
+          const shouldOpen = !item.classList.contains("is-open");
+          faqItems.forEach((currentItem) => setFaqPanel(currentItem, currentItem === item && shouldOpen));
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        faqItems.forEach((item) => {
+          if (item.classList.contains("is-open")) {
+            item.querySelector(".faq-panel").style.maxHeight = `${item.querySelector(".faq-panel").scrollHeight}px`;
+          }
+        });
+      });
+    </script>
   </body>
 </html>
