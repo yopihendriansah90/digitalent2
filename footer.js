@@ -12,7 +12,7 @@ if (footerMount) {
             <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-cyan">CompTIA Partner Ecosystem</span>
           </div>
         </div>
-        <div>
+        <div class="hidden lg:block">
           <h3 class="text-lg font-extrabold">Pages</h3>
           <ul class="mt-4 space-y-3 text-white/70">
             <li><a href="index.html" class="hover:text-brand-cyan">Home</a></li>
@@ -24,7 +24,7 @@ if (footerMount) {
             <li><a href="contact.html" class="hover:text-brand-cyan">Contact</a></li>
           </ul>
         </div>
-        <div>
+        <div class="hidden lg:block">
           <h3 class="text-lg font-extrabold">Services</h3>
           <ul class="mt-4 space-y-3 text-white/70">
             <li><a href="training.html" class="hover:text-brand-cyan">IT Training</a></li>
@@ -54,7 +54,7 @@ if (footerMount) {
           </div>
         </div>
       </div>
-      <div class="border-t border-white/10">
+      <div class="hidden border-t border-white/10 lg:block">
         <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p>Copyright (c) 2026 PT. Systech Talenta Digital. All Rights Reserved.</p>
           <p>Integrity, professionalism, quality, and sustainable digital growth.</p>

@@ -84,35 +84,40 @@
         position: relative;
         overflow: hidden;
         border-radius: 0.5rem;
-        cursor: zoom-in;
-      }
-      .hero-photo-frame::after {
-        content: "Click to expand";
-        position: absolute;
-        left: 1rem;
-        bottom: 1rem;
-        z-index: 1;
-        border-radius: 9999px;
-        background: rgba(255, 255, 255, 0.92);
-        color: #071b34;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0;
-        padding: 0.45rem 0.8rem;
-        box-shadow: 0 8px 24px rgba(7, 27, 52, 0.12);
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity 220ms ease, transform 220ms ease;
-        pointer-events: none;
-      }
-      .hero-photo-frame:hover::after,
-      .hero-photo-frame:focus-visible::after {
-        opacity: 1;
-        transform: translateY(0);
+        cursor: default;
       }
       .hero-photo-frame:focus-visible {
         outline: 3px solid rgba(0, 103, 216, 0.34);
         outline-offset: 4px;
+      }
+      @media (min-width: 1024px) {
+        .hero-photo-frame {
+          cursor: zoom-in;
+        }
+        .hero-photo-frame::after {
+          content: "Click to expand";
+          position: absolute;
+          left: 1rem;
+          bottom: 1rem;
+          z-index: 1;
+          border-radius: 9999px;
+          background: rgba(255, 255, 255, 0.92);
+          color: #071b34;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0;
+          padding: 0.45rem 0.8rem;
+          box-shadow: 0 8px 24px rgba(7, 27, 52, 0.12);
+          opacity: 0;
+          transform: translateY(8px);
+          transition: opacity 220ms ease, transform 220ms ease;
+          pointer-events: none;
+        }
+        .hero-photo-frame:hover::after,
+        .hero-photo-frame:focus-visible::after {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .lightbox {
         opacity: 0;
@@ -131,7 +136,7 @@
         transform: translateY(0) scale(1);
       }
       .lightbox-image {
-        max-height: min(78vh, 880px);
+        max-height: min(72vh, 880px);
       }
       .value-card {
         transition: background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
@@ -211,37 +216,37 @@
 
     <main>
       <section class="overflow-hidden border-b border-slate-100 bg-white reveal">
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-24">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:py-14 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12 lg:py-24">
           <div>
-            <div class="mb-6 flex flex-wrap gap-3">
-              <span class="rounded-full border border-brand-cyan/40 bg-white px-4 py-2 text-sm font-semibold text-brand-blue">Part of SGI Asia Group</span>
-              <span class="rounded-full border border-brand-orange/40 bg-white px-4 py-2 text-sm font-semibold text-brand-navy">Authorized CompTIA Partner Ecosystem</span>
+            <div class="mb-5 flex flex-wrap gap-2.5 sm:gap-3">
+              <span class="rounded-full border border-brand-cyan/40 bg-white px-3 py-1.5 text-xs font-semibold text-brand-blue sm:px-4 sm:py-2 sm:text-sm">Part of SGI Asia Group</span>
+              <span class="rounded-full border border-brand-orange/40 bg-white px-3 py-1.5 text-xs font-semibold text-brand-navy sm:px-4 sm:py-2 sm:text-sm">Authorized CompTIA Partner Ecosystem</span>
             </div>
-            <h1 class="max-w-4xl text-4xl font-black leading-tight tracking-normal text-brand-navy md:text-5xl lg:text-[56px]">Empowering Digital Talent, Enabling Global Success</h1>
-            <div class="mt-6 max-w-3xl space-y-4 text-lg leading-8 text-slate-600">
+            <h1 class="max-w-4xl text-[2rem] font-black leading-[1.08] tracking-normal text-brand-navy sm:text-[2.6rem] lg:text-[56px]">Empowering Digital Talent, Enabling Global Success</h1>
+            <div class="mt-5 max-w-3xl space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               <p>PT. Systech Talenta Digital, known as DigiTalent, was founded in August 2025 with a clear purpose: to support digital transformation through capable, industry-ready talent. As part of the SGI Asia Group, we focus on two core services: IT Training and IT Outsourcing.</p>
               <p>We build professionals through structured, practical training and provide trusted talent aligned with real business needs. Guided by integrity, professionalism, and quality, we deliver measurable value for our partners and support sustainable digital growth.</p>
             </div>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a class="cta-button rounded-md bg-brand-blue px-6 py-3 text-center font-bold text-white shadow-soft hover:bg-brand-navy" href="training.html">View Training</a>
-              <a class="cta-button rounded-md border border-brand-blue px-6 py-3 text-center font-bold text-brand-blue hover:bg-brand-sky" href="outsourcing.html">Request IT Talent</a>
+              <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white shadow-soft hover:bg-brand-navy sm:flex-1 lg:flex-none" href="training.html">View Training</a>
+              <a class="cta-button rounded-md border border-brand-blue px-6 py-3.5 text-center font-bold text-brand-blue hover:bg-brand-sky sm:flex-1 lg:flex-none" href="outsourcing.html">Request IT Talent</a>
             </div>
           </div>
-          <div class="rounded-lg border border-slate-100 bg-slate-50 p-3 shadow-sm">
-            <div class="grid gap-4 sm:grid-cols-[1.2fr_0.8fr]">
+          <div class="rounded-lg border border-slate-100 bg-slate-50 p-2.5 shadow-sm sm:p-3">
+            <div class="grid gap-3 sm:gap-4 md:grid-cols-[1.2fr_0.8fr]">
               <button class="hero-photo-frame block text-left" type="button" aria-label="Open large image: DigiTalent training session" data-lightbox-image="https://www.sgi-asia.co.id/Activities/CSAS.jpg" data-lightbox-alt="DigiTalent training session">
-                <div class="hero-photo parallax-photo min-h-[440px] rounded-lg shadow-sm" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
+                <div class="hero-photo parallax-photo min-h-[280px] rounded-lg shadow-sm sm:min-h-[360px] lg:min-h-[440px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
               </button>
-              <div class="grid gap-4">
+              <div class="grid gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-1">
                 <button class="hero-photo-frame block text-left" type="button" aria-label="Open large image: DigiTalent CompTIA event" data-lightbox-image="https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg" data-lightbox-alt="DigiTalent CompTIA event">
-                  <div class="hero-photo parallax-photo min-h-[212px] rounded-lg shadow-sm" style="--photo: url('https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg')"></div>
+                  <div class="hero-photo parallax-photo min-h-[200px] rounded-lg shadow-sm sm:min-h-[220px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg')"></div>
                 </button>
                 <button class="hero-photo-frame block text-left" type="button" aria-label="Open large image: DigiTalent corporate meeting" data-lightbox-image="https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg" data-lightbox-alt="DigiTalent corporate meeting">
-                  <div class="hero-photo parallax-photo min-h-[202px] rounded-lg shadow-sm" style="--photo: url('https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg')"></div>
+                  <div class="hero-photo parallax-photo min-h-[200px] rounded-lg shadow-sm sm:min-h-[220px] lg:min-h-[202px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg')"></div>
                 </button>
               </div>
             </div>
-            <div class="mt-4 rounded-lg border border-slate-200 bg-white px-5 py-4 shadow-sm">
+            <div class="mt-3 rounded-lg border border-slate-200 bg-white px-4 py-4 shadow-sm sm:mt-4 sm:px-5">
               <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Core Services</p>
                 <div class="flex flex-col gap-2 text-sm font-semibold text-brand-navy sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
@@ -254,21 +259,21 @@
         </div>
       </section>
 
-      <section class="reveal border-t border-slate-100 bg-white py-16 lg:py-20">
+      <section class="reveal border-t border-slate-100 bg-white py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div>
             <div>
               <p class="font-bold uppercase tracking-wide text-brand-blue">Brand Identity</p>
-              <h2 class="mt-3 text-3xl font-extrabold text-brand-navy md:text-4xl">Value</h2>
+              <h2 class="mt-3 text-[1.75rem] font-extrabold text-brand-navy sm:text-3xl md:text-4xl">Value</h2>
             </div>
           </div>
-          <div class="stagger-group mt-10 grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
-            <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-7 shadow-sm lg:min-h-[420px]">
+          <div class="stagger-group mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-[0.92fr_1.08fr]">
+            <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7 lg:min-h-[420px]">
               <span class="value-number text-sm font-extrabold text-brand-blue">01</span>
-              <h3 class="value-title mt-5 text-3xl font-extrabold text-brand-navy">Integrity</h3>
-              <p class="value-copy mt-5 max-w-md leading-7 text-slate-600">Upholding honesty, responsibility, and professional ethics.</p>
+              <h3 class="value-title mt-4 text-[1.6rem] font-extrabold text-brand-navy sm:mt-5 sm:text-3xl">Integrity</h3>
+              <p class="value-copy mt-4 max-w-md leading-7 text-slate-600 sm:mt-5">Upholding honesty, responsibility, and professional ethics.</p>
             </article>
-            <div class="grid gap-5 sm:grid-cols-2">
+            <div class="grid gap-4 sm:grid-cols-2 sm:gap-5">
               <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <span class="value-number text-sm font-extrabold text-brand-blue">02</span>
                 <h3 class="value-title mt-4 text-xl font-extrabold text-brand-navy">Adaptive</h3>
@@ -294,110 +299,110 @@
         </div>
       </section>
 
-      <section class="reveal border-y border-slate-100 bg-slate-50 py-16 lg:py-20">
+      <section class="reveal border-y border-slate-100 bg-slate-50 py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div>
             <div>
               <p class="font-bold uppercase tracking-wide text-brand-blue">In Numbers</p>
-              <h2 class="mt-3 text-3xl font-extrabold text-brand-navy md:text-4xl">Progress Counter</h2>
+              <h2 class="mt-3 text-[1.75rem] font-extrabold text-brand-navy sm:text-3xl md:text-4xl">Progress Counter</h2>
             </div>
           </div>
-          <div class="stagger-group mt-10 grid divide-y divide-slate-200 border-y border-slate-200 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-            <div class="stagger-item px-6 py-10 text-center">
-              <div class="counter text-5xl font-black leading-none text-brand-blue md:text-6xl" data-target="500" data-suffix="+">500+</div>
-              <p class="mt-6 text-sm font-medium leading-6 text-slate-600">Completed<br />Training</p>
+          <div class="stagger-group mt-8 grid divide-y divide-slate-200 border-y border-slate-200 sm:mt-10 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
+              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="500" data-suffix="+">500+</div>
+              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Completed<br />Training</p>
             </div>
-            <div class="stagger-item px-6 py-10 text-center">
-              <div class="counter text-5xl font-black leading-none text-brand-blue md:text-6xl" data-target="50" data-suffix="+">50+</div>
-              <p class="mt-6 text-sm font-medium leading-6 text-slate-600">Completed<br />Certification</p>
+            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
+              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="50" data-suffix="+">50+</div>
+              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Completed<br />Certification</p>
             </div>
-            <div class="stagger-item px-6 py-10 text-center">
-              <div class="counter text-5xl font-black leading-none text-brand-blue md:text-6xl" data-target="500" data-suffix="+">500+</div>
-              <p class="mt-6 text-sm font-medium leading-6 text-slate-600">Company<br />Client</p>
+            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
+              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="500" data-suffix="+">500+</div>
+              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Company<br />Client</p>
             </div>
-            <div class="stagger-item px-6 py-10 text-center">
-              <div class="counter text-5xl font-black leading-none text-brand-blue md:text-6xl" data-target="100" data-suffix="+">100+</div>
-              <p class="mt-6 text-sm font-medium leading-6 text-slate-600">Total<br />Training</p>
+            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
+              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="100" data-suffix="+">100+</div>
+              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Total<br />Training</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="reveal bg-white py-16 lg:py-20">
+      <section class="reveal bg-white py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div>
             <div>
               <p class="font-bold uppercase tracking-wide text-brand-blue">Why DigiTalent</p>
-              <h2 class="mt-3 text-3xl font-extrabold text-brand-navy md:text-4xl">Why Choose Us</h2>
+              <h2 class="mt-3 text-[1.75rem] font-extrabold text-brand-navy sm:text-3xl md:text-4xl">Why Choose Us</h2>
             </div>
           </div>
-          <div class="stagger-group mt-10 grid gap-6 lg:grid-cols-2">
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
+          <div class="stagger-group mt-8 grid gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-2">
+            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <span class="feature-number text-sm font-extrabold text-brand-blue">01</span>
-              <h3 class="feature-title mt-3 text-2xl font-extrabold text-brand-navy">Affiliate with SGI Asia as an Authorized CompTIA Partner</h3>
+              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Affiliate with SGI Asia as an Authorized CompTIA Partner</h3>
               <p class="feature-copy mt-4 leading-7 text-slate-600">Our curriculum and services align with global industry standards, continuously updated to remain relevant with real-world case studies, the evolving cyber threat landscape, and current industry demands.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
+            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <span class="feature-number text-sm font-extrabold text-brand-blue">02</span>
-              <h3 class="feature-title mt-3 text-2xl font-extrabold text-brand-navy">Experienced Professionals</h3>
+              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Experienced Professionals</h3>
               <p class="feature-copy mt-4 leading-7 text-slate-600">We are backed by certified experts and professionals with proven hands-on experience in executing real-world projects.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
+            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <span class="feature-number text-sm font-extrabold text-brand-blue">03</span>
-              <h3 class="feature-title mt-3 text-2xl font-extrabold text-brand-navy">Backed by a Robust Ecosystem</h3>
+              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Backed by a Robust Ecosystem</h3>
               <p class="feature-copy mt-4 leading-7 text-slate-600">Our competitive edge is reinforced by the SGI Asia Ecosystem, granting us access to an extensive client network and deep insights into Indonesia's specific IT landscape and requirements.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
+            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <span class="feature-number text-sm font-extrabold text-brand-blue">04</span>
-              <h3 class="feature-title mt-3 text-2xl font-extrabold text-brand-navy">Solution-Oriented Approach & Career Support</h3>
+              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Solution-Oriented Approach & Career Support</h3>
               <p class="feature-copy mt-4 leading-7 text-slate-600">We provide comprehensive recruitment support and career development, empowering our trainees to solve practical IT challenges effectively.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-7 shadow-sm lg:col-span-2">
+            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7 lg:col-span-2">
               <span class="feature-number text-sm font-extrabold text-brand-blue">05</span>
-              <h3 class="feature-title mt-3 text-2xl font-extrabold text-brand-navy">Unwavering Commitment to Quality</h3>
+              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Unwavering Commitment to Quality</h3>
               <p class="feature-copy mt-4 max-w-4xl leading-7 text-slate-600">We maintain an absolute commitment to quality and client satisfaction, driven by excellence, professionalism, and delivering impactful results for your business.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="reveal border-t border-slate-100 bg-brand-sky/30 py-16 lg:py-20">
-        <div class="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div class="rounded-lg bg-slate-50 lg:sticky lg:top-28">
+      <section class="reveal border-t border-slate-100 bg-brand-sky/30 py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div class="rounded-lg bg-slate-50 p-1 lg:sticky lg:top-28">
             <p class="font-bold uppercase tracking-wide text-brand-blue">Registration Support</p>
-            <h2 class="mt-3 text-3xl font-extrabold leading-tight text-brand-navy md:text-4xl">FAQ & Registration Link</h2>
+            <h2 class="mt-3 text-[1.75rem] font-extrabold leading-tight text-brand-navy sm:text-3xl md:text-4xl">FAQ & Registration Link</h2>
             <p class="mt-5 leading-7 text-slate-600">The DigiTalent team can help map your training, certification, and IT talent needs based on your business goals.</p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <a class="cta-button rounded-md bg-brand-blue px-6 py-3 text-center font-bold text-white shadow-soft hover:bg-brand-navy" href="contact.html">Consult Program</a>
-              <a class="cta-button rounded-md border border-brand-blue bg-white px-6 py-3 text-center font-bold text-brand-blue hover:bg-brand-sky" href="training.html">View Training Options</a>
+              <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white shadow-soft hover:bg-brand-navy sm:flex-1 lg:flex-none" href="contact.html">Consult Program</a>
+              <a class="cta-button rounded-md border border-brand-blue bg-white px-6 py-3.5 text-center font-bold text-brand-blue hover:bg-brand-sky sm:flex-1 lg:flex-none" href="training.html">View Training Options</a>
             </div>
           </div>
           <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <article class="faq-item is-open border-b border-slate-200">
-              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="true">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-6 text-left font-extrabold text-brand-navy hover:bg-slate-50 sm:px-6 sm:py-7" type="button" aria-expanded="true">
                 <span>Why choose training at DigiTalent?</span>
                 <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-7 leading-7 text-slate-600">DigiTalent combines practical curriculum, experienced mentors, industry case studies, hands-on labs, and the SGI Asia ecosystem to keep training relevant to real work needs.</p>
+                <p class="px-5 pb-6 leading-7 text-slate-600 sm:px-6 sm:pb-7">DigiTalent combines practical curriculum, experienced mentors, industry case studies, hands-on labs, and the SGI Asia ecosystem to keep training relevant to real work needs.</p>
               </div>
             </article>
             <article class="faq-item border-b border-slate-200">
-              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="false">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-6 text-left font-extrabold text-brand-navy hover:bg-slate-50 sm:px-6 sm:py-7" type="button" aria-expanded="false">
                 <span>How do I choose the right training for my needs?</span>
                 <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-7 leading-7 text-slate-600">Training selection can start from competency needs, participant level, certification targets, class format, and the planned work application. DigiTalent can help recommend the right program.</p>
+                <p class="px-5 pb-6 leading-7 text-slate-600 sm:px-6 sm:pb-7">Training selection can start from competency needs, participant level, certification targets, class format, and the planned work application. DigiTalent can help recommend the right program.</p>
               </div>
             </article>
             <article class="faq-item">
-              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-6 py-7 text-left font-extrabold text-brand-navy hover:bg-slate-50" type="button" aria-expanded="false">
+              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-6 text-left font-extrabold text-brand-navy hover:bg-slate-50 sm:px-6 sm:py-7" type="button" aria-expanded="false">
                 <span>What facilities are provided?</span>
                 <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
               </button>
               <div class="faq-panel">
-                <p class="px-6 pb-7 leading-7 text-slate-600">Programs may include direct online access, interactive discussions with trainers, virtual learning support, hands-on labs, project-based assessments, and real-world scenarios.</p>
+                <p class="px-5 pb-6 leading-7 text-slate-600 sm:px-6 sm:pb-7">Programs may include direct online access, interactive discussions with trainers, virtual learning support, hands-on labs, project-based assessments, and real-world scenarios.</p>
               </div>
             </article>
           </div>
@@ -408,7 +413,7 @@
     <div id="hero-lightbox" class="lightbox fixed inset-0 z-[80] flex items-center justify-center bg-brand-navy/88 px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="hero-lightbox-title" aria-hidden="true">
       <div class="absolute inset-0" data-lightbox-close></div>
       <div class="lightbox-dialog relative z-[1] w-full max-w-6xl">
-        <button class="absolute right-3 top-3 rounded-full bg-white/92 px-3 py-2 text-sm font-bold text-brand-navy shadow-sm transition hover:bg-white" type="button" data-lightbox-close aria-label="Close image viewer">Close</button>
+        <button class="absolute right-3 top-3 rounded-full bg-white/92 px-3 py-2 text-sm font-bold text-brand-navy shadow-sm transition hover:bg-white sm:right-4 sm:top-4" type="button" data-lightbox-close aria-label="Close image viewer">Close</button>
         <div class="overflow-hidden rounded-2xl border border-white/12 bg-white p-3 shadow-2xl">
           <p id="hero-lightbox-title" class="sr-only">Expanded DigiTalent image preview</p>
           <img id="hero-lightbox-image" class="lightbox-image w-full rounded-xl object-contain" src="" alt="" />
@@ -429,6 +434,7 @@
       const lightboxClosers = document.querySelectorAll("[data-lightbox-close]");
       const lightboxCloseButton = lightbox.querySelector("button[data-lightbox-close]");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const desktopLightbox = window.matchMedia("(min-width: 1024px)");
       let activeLightboxTrigger = null;
 
       function setFaqPanel(item, open) {
@@ -503,6 +509,7 @@
 
       lightboxTriggers.forEach((trigger) => {
         trigger.addEventListener("click", () => {
+          if (!desktopLightbox.matches) return;
           openLightbox(trigger.dataset.lightboxImage, trigger.dataset.lightboxAlt, trigger);
         });
       });
