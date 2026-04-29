@@ -57,7 +57,7 @@ if (footerMount) {
       </div>
       <div class="hidden border-t border-white/10 lg:block">
         <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <p>Copyright (c) 2026 PT. Systech Talenta Digital. All Rights Reserved.</p>
+          <p>&copy; 2026 PT. Systech Talenta Digital. All Rights Reserved.</p>
           <p>Empowering Digital Talent, Enabling Global Success.</p>
         </div>
       </div>
