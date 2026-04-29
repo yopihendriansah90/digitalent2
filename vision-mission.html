@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <title>Vision & Mission - DigiTalent</title>
+    <meta name="description" content="Visi dan misi DigiTalent untuk pengembangan digital talent yang unggul, inovatif, dan kompetitif secara global." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                navy: "#09468a",
+                blue: "#009adf",
+                cyan: "#7fd7ff",
+                sky: "#ecf8ff",
+                orange: "#f3a836",
+                ink: "#10233c",
+              },
+            },
+            boxShadow: { soft: "0 24px 60px rgba(9, 70, 138, 0.12)" },
+          },
+        },
+      };
+    </script>
+    <style>body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }</style>
+  </head>
+  <body class="bg-white text-brand-ink">
+    <div id="site-header"></div>
+    <script src="header.js"></script>
+
+    <main>
+      <section class="bg-brand-navy py-14 text-white lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <p class="text-sm font-medium text-white/70"><a href="index.html" class="hover:text-white">Home</a> / Vision & Mission</p>
+          <p class="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-brand-orange">Vision & Mission</p>
+          <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.05] sm:text-[2.8rem] lg:text-[3.5rem]">Direction, operating principles, and long-term purpose behind DigiTalent.</h1>
+        </div>
+      </section>
+
+      <section class="py-14 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <div class="rounded-[32px] bg-gradient-to-br from-brand-sky via-white to-white p-8 shadow-soft sm:p-10">
+            <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Vision</p>
+            <p class="mt-4 text-2xl font-black leading-tight text-brand-navy sm:text-3xl">To be the leading strategic partner in developing and providing superior, innovative, and globally competitive digital talent to support international-standard digital transformation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 py-14 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Mission</p>
+          <div class="mt-8 grid gap-5 lg:grid-cols-2">
+            <article class="rounded-[26px] bg-white p-6 shadow-soft">
+              <p class="text-sm font-extrabold text-brand-orange">01</p>
+              <p class="mt-4 leading-7 text-slate-600">Provide high-quality IT training and certification programs to produce job-ready digital talent that meets global standards.</p>
+            </article>
+            <article class="rounded-[26px] bg-white p-6 shadow-soft">
+              <p class="text-sm font-extrabold text-brand-orange">02</p>
+              <p class="mt-4 leading-7 text-slate-600">Establish a professional and reliable outsourcing ecosystem to fulfill the human resource and IT solution needs of partner companies.</p>
+            </article>
+            <article class="rounded-[26px] bg-white p-6 shadow-soft">
+              <p class="text-sm font-extrabold text-brand-orange">03</p>
+              <p class="mt-4 leading-7 text-slate-600">Forge strategic collaborations with industries, educational institutions, and government to strengthen the national digital talent supply.</p>
+            </article>
+            <article class="rounded-[26px] bg-white p-6 shadow-soft">
+              <p class="text-sm font-extrabold text-brand-orange">04</p>
+              <p class="mt-4 leading-7 text-slate-600">Drive continuous innovation in learning systems, recruitment processes, and technology project execution.</p>
+            </article>
+            <article class="rounded-[26px] bg-white p-6 shadow-soft lg:col-span-2">
+              <p class="text-sm font-extrabold text-brand-orange">05</p>
+              <p class="mt-4 leading-7 text-slate-600">Uphold integrity, professionalism, and client satisfaction in every training and technology service delivered.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="footer.js"></script>
+  </body>
+</html>

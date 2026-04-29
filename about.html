@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <title>About - DigiTalent</title>
+    <title>About Us - DigiTalent</title>
     <meta name="description" content="Tentang DigiTalent sebagai strategic partner untuk digital transformation melalui IT Training dan IT Outsourcing." />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,16 +15,16 @@
           extend: {
             colors: {
               brand: {
-                navy: "#071b34",
-                blue: "#0067d8",
-                cyan: "#00c7f2",
-                sky: "#e8f8ff",
-                orange: "#ff9f1a",
-                ink: "#101828",
+                navy: "#09468a",
+                blue: "#009adf",
+                cyan: "#7fd7ff",
+                sky: "#ecf8ff",
+                orange: "#f3a836",
+                ink: "#10233c",
               },
             },
             boxShadow: {
-              soft: "0 18px 50px rgba(7, 27, 52, 0.12)",
+              soft: "0 24px 60px rgba(9, 70, 138, 0.12)",
             },
           },
         },
@@ -43,33 +43,16 @@
         transform: translateY(0);
       }
       .story-photo {
-        background-image:
-          linear-gradient(180deg, rgba(7, 27, 52, 0.08), rgba(7, 27, 52, 0.16)),
-          var(--photo);
+        background-image: linear-gradient(180deg, rgba(9, 70, 138, 0.08), rgba(9, 70, 138, 0.2)), var(--photo);
         background-position: center;
         background-size: cover;
       }
-      .info-card {
-        transition: transform 260ms ease, box-shadow 260ms ease;
-      }
-      .info-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 50px rgba(7, 27, 52, 0.14);
-      }
-      .cta-button {
-        transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, color 220ms ease, border-color 220ms ease;
-      }
-      .cta-button:hover {
-        transform: translateY(-2px);
-      }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        .reveal,
-        .info-card,
-        .cta-button {
-          transition: none !important;
-          transform: none !important;
+        .reveal {
           opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
         }
       }
     </style>
@@ -79,66 +62,83 @@
     <script src="header.js"></script>
 
     <main>
-      <section class="border-b border-slate-100 bg-slate-50 reveal">
-        <div class="mx-auto max-w-7xl px-4 py-10 sm:py-12 lg:py-14">
-          <p class="text-sm font-medium text-slate-500"><a href="index.html" class="hover:text-brand-blue">Home</a> / About</p>
-              <p class="mt-4 text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">About Us</p>
-              <div class="mt-3 grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-                <h1 class="max-w-4xl text-[2rem] font-extrabold leading-[1.08] tracking-normal text-brand-navy sm:text-[2.45rem] lg:text-[3.2rem]">Strategic partner for digital transformation through IT Training and IT Outsourcing.</h1>
-                <p class="max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">DigiTalent is built to connect industry demand with capable talent through structured development and reliable service delivery.</p>
-              </div>
+      <section class="border-b border-slate-200 bg-gradient-to-br from-brand-sky via-white to-white reveal">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:py-14 lg:py-16">
+          <p class="text-sm font-medium text-slate-500"><a href="index.html" class="hover:text-brand-blue">Home</a> / About Us</p>
+          <p class="mt-5 text-sm font-bold uppercase tracking-[0.24em] text-brand-blue">About Us</p>
+          <div class="mt-4 grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+            <h1 class="max-w-4xl text-[2.1rem] font-black leading-[1.05] text-brand-navy sm:text-[2.7rem] lg:text-[3.5rem]">Strategic partner for digital transformation through IT Training and IT Outsourcing.</h1>
+            <p class="max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">DigiTalent was built to answer a practical challenge: organizations need industry-ready talent, and talent needs structured pathways to become truly job-ready.</p>
           </div>
+        </div>
       </section>
 
-      <section class="reveal bg-white py-12 sm:py-14 lg:py-16">
-        <div class="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1.06fr_0.94fr] lg:gap-10">
+      <section class="reveal bg-white py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1fr_0.96fr] lg:items-start lg:gap-12">
           <div class="space-y-6">
-            <article class="max-w-3xl">
-              <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Who We Are</p>
-              <p class="mt-3 text-lg leading-8 text-slate-600">PT. Systech Talenta Digital (DigiTalent) is a technology company and strategic partner for digital transformation. We focus on two core services: IT Training and IT Outsourcing. We believe digital progress depends on skilled people who can adapt and perform in real environments.</p>
+            <article class="rounded-[28px] border border-slate-200 bg-white p-7 shadow-soft sm:p-8">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Who We Are</p>
+              <p class="mt-4 text-lg leading-8 text-slate-600">PT. Systech Talenta Digital (DigiTalent) is a technology company and strategic partner for digital transformation. We focus on two core services: IT Training and IT Outsourcing. We believe digital progress depends on skilled people who can adapt and perform in real environments.</p>
             </article>
 
-            <article class="max-w-3xl border-t border-slate-200 pt-6">
-              <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Where We Come From</p>
-              <p class="mt-3 text-lg leading-8 text-slate-600">DigiTalent is part of SGI Asia Group, an IT group established in 2013. We originated from the training division of PT. Systech Global Informasi and later became an independent company. With strong industry experience and networks, we address two key needs: developing competent professionals and providing industry-ready talent. Our goal is to connect industry demands with available skills through structured training and reliable outsourcing services.</p>
+            <article class="rounded-[28px] border border-slate-200 bg-brand-navy p-7 text-white shadow-soft sm:p-8">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-orange">Where We Come From</p>
+              <p class="mt-4 text-lg leading-8 text-white/80">DigiTalent is part of SGI Asia Group, an IT group established in 2013. We originated from the training division of PT. Systech Global Informasi and later became an independent company. With strong industry experience and networks, we address two key needs: developing competent professionals and providing industry-ready talent.</p>
             </article>
 
-            <article class="max-w-3xl border-t border-slate-200 pt-6">
-              <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Our Commitment</p>
-              <p class="mt-3 text-lg leading-8 text-slate-600">Therefore, our commitment is to bridge the gap between industry demands and talent availability. Through structured training programs and flexible, trusted outsourcing services, we empower individuals and organizations to excel in a competitive digital future.</p>
+            <article class="rounded-[28px] border border-slate-200 bg-white p-7 shadow-soft sm:p-8">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Our Commitment</p>
+              <p class="mt-4 text-lg leading-8 text-slate-600">Our commitment is to bridge the gap between industry demands and talent availability. Through structured training programs and flexible, trusted outsourcing services, we empower individuals and organizations to excel in a competitive digital future.</p>
             </article>
           </div>
 
-          <aside class="space-y-4">
-            <div class="story-photo min-h-[300px] rounded-[28px] shadow-soft sm:min-h-[360px] lg:min-h-[420px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
+          <aside class="space-y-5">
+            <div class="story-photo min-h-[320px] rounded-[30px] shadow-soft sm:min-h-[380px] lg:min-h-[460px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
 
-            <div class="info-card rounded-[24px] border border-slate-200 bg-white p-5 shadow-soft">
-              <p class="text-[0.72rem] font-bold uppercase tracking-[0.2em] text-brand-blue">Company Snapshot</p>
-              <div class="mt-4 space-y-3.5">
-                <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Business Focus</p>
-                  <p class="mt-1 text-lg font-bold text-brand-navy">IT Training & IT Outsourcing</p>
-                </div>
-                <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Group</p>
-                  <p class="mt-1 text-lg font-bold text-brand-navy">SGI Asia Group</p>
-                </div>
-                <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Background</p>
-                  <p class="mt-1 text-base leading-7 text-slate-600">Originated from the training division of PT. Systech Global Informasi.</p>
-                </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[24px] border border-slate-200 bg-brand-sky p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Founded</p>
+                <p class="mt-2 text-2xl font-black text-brand-navy">Aug 2025</p>
+              </div>
+              <div class="rounded-[24px] border border-slate-200 bg-white p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Group</p>
+                <p class="mt-2 text-2xl font-black text-brand-navy">SGI Asia</p>
               </div>
             </div>
 
-            <div class="rounded-[24px] bg-brand-navy p-5 text-white shadow-soft">
-              <p class="text-[0.72rem] font-bold uppercase tracking-[0.2em] text-brand-cyan">Next Step</p>
-              <p class="mt-3 text-[1.2rem] font-bold leading-snug">Explore DigiTalent services or talk directly with our team.</p>
-              <div class="mt-5 flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white hover:bg-white hover:text-brand-navy" href="services.html">Explore Services</a>
-                <a class="cta-button rounded-md border border-white/18 px-6 py-3.5 text-center font-bold text-white hover:bg-white hover:text-brand-navy" href="contact.html">Contact DigiTalent</a>
+            <div class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Business Focus</p>
+              <div class="mt-5 grid gap-3">
+                <div class="rounded-2xl border border-slate-200 px-4 py-4">
+                  <p class="text-lg font-bold text-brand-navy">IT Training</p>
+                  <p class="mt-1 leading-7 text-slate-600">Structured learning, mentoring, certification preparation, and applied capability development.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 px-4 py-4">
+                  <p class="text-lg font-bold text-brand-navy">IT Outsourcing</p>
+                  <p class="mt-1 leading-7 text-slate-600">Trusted IT talent supply for project, operational, and long-term business needs.</p>
+                </div>
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section class="reveal border-t border-slate-200 bg-slate-50 py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <div class="grid gap-5 lg:grid-cols-3">
+            <article class="rounded-[26px] bg-white p-7 shadow-soft">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Industry Bridge</p>
+              <p class="mt-4 leading-7 text-slate-600">We connect business demand with talent development so capability building is not separated from market reality.</p>
+            </article>
+            <article class="rounded-[26px] bg-white p-7 shadow-soft">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Structured Growth</p>
+              <p class="mt-4 leading-7 text-slate-600">Each service is designed around measurable outcomes, from learning readiness to deployment readiness.</p>
+            </article>
+            <article class="rounded-[26px] bg-white p-7 shadow-soft">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Trusted Delivery</p>
+              <p class="mt-4 leading-7 text-slate-600">Integrity, professionalism, and quality remain the operating standard across our training and outsourcing work.</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -156,7 +156,7 @@
             entry.target.classList.add("is-visible");
             revealObserver.unobserve(entry.target);
           });
-        }, { threshold: 0.18 });
+        }, { threshold: 0.16 });
 
         revealElements.forEach((element) => revealObserver.observe(element));
       } else {

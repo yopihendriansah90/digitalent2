@@ -9,7 +9,8 @@ if (footerMount) {
           <p class="mt-5 max-w-md leading-7 text-white/70">PT. Systech Talenta Digital, known as DigiTalent, supports digital transformation through capable, industry-ready talent. As part of SGI Asia Group, we focus on IT Training and IT Outsourcing.</p>
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-cyan">SGI Asia Group</span>
-            <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-cyan">CompTIA Partner Ecosystem</span>
+            <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-orange">Integrity</span>
+            <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-orange">Adaptive</span>
           </div>
         </div>
         <div class="hidden lg:block">
@@ -18,10 +19,10 @@ if (footerMount) {
             <li><a href="index.html" class="hover:text-brand-cyan">Home</a></li>
             <li><a href="about.html" class="hover:text-brand-cyan">About Us</a></li>
             <li><a href="services.html" class="hover:text-brand-cyan">Services</a></li>
-            <li><a href="training.html" class="hover:text-brand-cyan">Training</a></li>
-            <li><a href="outsourcing.html" class="hover:text-brand-cyan">Outsourcing</a></li>
-            <li><a href="portfolio.html" class="hover:text-brand-cyan">Portfolio</a></li>
+            <li><a href="vision-mission.html" class="hover:text-brand-cyan">Vision & Mission</a></li>
+            <li><a href="portfolio.html" class="hover:text-brand-cyan">Client / Portfolio</a></li>
             <li><a href="contact.html" class="hover:text-brand-cyan">Contact</a></li>
+            <li><a href="training.html" class="hover:text-brand-cyan">Training</a></li>
           </ul>
         </div>
         <div class="hidden lg:block">
@@ -57,7 +58,7 @@ if (footerMount) {
       <div class="hidden border-t border-white/10 lg:block">
         <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p>Copyright (c) 2026 PT. Systech Talenta Digital. All Rights Reserved.</p>
-          <p>Integrity, professionalism, quality, and sustainable digital growth.</p>
+          <p>Empowering Digital Talent, Enabling Global Success.</p>
         </div>
       </div>
     </footer>

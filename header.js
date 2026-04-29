@@ -6,12 +6,13 @@ if (headerMount) {
   const activeLinkClass = "text-brand-blue";
   const navItems = [
     ["index.html", "Home"],
-    ["about.html", "About"],
+    ["about.html", "About Us"],
     ["services.html", "Services"],
+    ["vision-mission.html", "Vision & Mission"],
+    ["portfolio.html", "Client / Portfolio"],
+    ["contact.html", "Contact"],
     ["training.html", "Training"],
     ["outsourcing.html", "Outsourcing"],
-    ["portfolio.html", "Portfolio"],
-    ["contact.html", "Contact"],
   ];
 
   const navLinks = navItems
@@ -31,35 +32,39 @@ if (headerMount) {
     .join("");
 
   headerMount.innerHTML = `
-    <div class="hidden bg-brand-navy text-white lg:block">
-      <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-sm md:flex-row md:items-center md:justify-between">
-        <div class="flex flex-wrap gap-x-6 gap-y-2 text-white/85">
-          <span>Monday - Friday, 08:00 - 17:00</span>
-          <span>Wisma Bumiputera Lt. 1, Jl. Jend. Sudirman Kav. 75</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <a class="text-white/85 hover:text-brand-cyan" href="mailto:info@digitalent.co.id">info@digitalent.co.id</a>
-          <a class="rounded-full bg-brand-cyan px-4 py-1.5 font-semibold text-brand-navy hover:bg-white" href="https://wa.me/628131337687">WhatsApp</a>
+    <div class="fixed inset-x-0 top-0 z-50">
+      <div id="desktop-topbar" class="hidden max-h-0 overflow-hidden bg-brand-navy text-white opacity-0 transition-[max-height,opacity] duration-300 ease-out lg:block lg:max-h-[52px] lg:opacity-100">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-sm md:flex-row md:items-center md:justify-between">
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-white/85">
+            <span>Monday - Friday, 08:00 - 17:00 WIB</span>
+            <span>Wisma Bumiputera Lt. 1, Jl. Jend. Sudirman Kav. 75</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <a class="text-white/85 hover:text-brand-cyan" href="mailto:info@digitalent.co.id">info@digitalent.co.id</a>
+            <a class="rounded-full bg-brand-orange px-4 py-1.5 font-semibold text-brand-navy hover:bg-white" href="https://wa.me/628131337687">WhatsApp</a>
+          </div>
         </div>
       </div>
+
+      <header class="border-b border-slate-200 bg-white/95 backdrop-blur">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:py-5">
+          <a href="index.html"><img src="Logo/PNG/Horizontal_Background Terang.png" alt="DigiTalent" class="h-10 w-auto sm:h-11 lg:h-12" /></a>
+          <button id="mobile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-brand-navy lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M4 7h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 17h16"></path>
+            </svg>
+          </button>
+          <div class="hidden items-center gap-x-6 gap-y-3 text-sm font-bold lg:flex">
+            ${navLinks}
+            <a class="rounded-md bg-brand-blue px-5 py-3 text-white hover:bg-brand-navy" href="contact.html">Free Consultation</a>
+          </div>
+        </nav>
+      </header>
     </div>
 
-    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:py-5">
-        <a href="index.html"><img src="Logo/PNG/Horizontal_Background Terang.png" alt="DigiTalent" class="h-10 w-auto sm:h-11 lg:h-12" /></a>
-        <button id="mobile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-brand-navy lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M4 7h16"></path>
-            <path d="M4 12h16"></path>
-            <path d="M4 17h16"></path>
-          </svg>
-        </button>
-        <div class="hidden items-center gap-x-7 gap-y-3 text-sm font-bold lg:flex">
-          ${navLinks}
-          <a class="rounded-md bg-brand-blue px-5 py-3 text-white hover:bg-brand-navy" href="contact.html">Free Consultation</a>
-        </div>
-      </nav>
-    </header>
+    <div id="header-spacer" class="h-[76px] lg:h-[128px] transition-[height] duration-300 ease-out" aria-hidden="true"></div>
 
     <div id="mobile-drawer" class="pointer-events-none fixed inset-0 z-[70] lg:hidden" aria-hidden="true">
       <div id="mobile-drawer-backdrop" class="absolute inset-0 bg-brand-navy/45 opacity-0 transition-opacity duration-200"></div>
@@ -89,6 +94,8 @@ if (headerMount) {
   const mobileDrawerBackdrop = document.getElementById("mobile-drawer-backdrop");
   const mobileDrawerPanel = document.getElementById("mobile-drawer-panel");
   const mobileDrawerLinks = mobileDrawer ? mobileDrawer.querySelectorAll("a") : [];
+  const desktopTopbar = document.getElementById("desktop-topbar");
+  const headerSpacer = document.getElementById("header-spacer");
 
   function openMobileDrawer() {
     if (!mobileDrawer || !mobileDrawerBackdrop || !mobileDrawerPanel || !mobileMenuToggle) return;
@@ -141,4 +148,35 @@ if (headerMount) {
       closeMobileDrawer();
     }
   });
+
+  function syncTopbarOnScroll() {
+    if (!desktopTopbar || !headerSpacer) return;
+
+    if (window.innerWidth < 1024) {
+      desktopTopbar.classList.remove("lg:max-h-0", "lg:opacity-0");
+      desktopTopbar.classList.add("lg:max-h-[52px]", "lg:opacity-100");
+      headerSpacer.classList.remove("lg:h-[76px]");
+      headerSpacer.classList.add("lg:h-[128px]");
+      return;
+    }
+
+    const currentScrollY = window.scrollY;
+    const isAtTop = currentScrollY <= 8;
+
+    if (isAtTop) {
+      desktopTopbar.classList.remove("lg:max-h-0", "lg:opacity-0");
+      desktopTopbar.classList.add("lg:max-h-[52px]", "lg:opacity-100");
+      headerSpacer.classList.add("lg:h-[128px]");
+      headerSpacer.classList.remove("lg:h-[76px]");
+      return;
+    }
+
+    desktopTopbar.classList.remove("lg:max-h-[52px]", "lg:opacity-100");
+    desktopTopbar.classList.add("lg:max-h-0", "lg:opacity-0");
+    headerSpacer.classList.remove("lg:h-[128px]");
+    headerSpacer.classList.add("lg:h-[76px]");
+  }
+
+  window.addEventListener("scroll", syncTopbarOnScroll, { passive: true });
+  syncTopbarOnScroll();
 }

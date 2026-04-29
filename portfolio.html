@@ -1,16 +1,103 @@
 <!doctype html>
 <html lang="id">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /><title>Portfolio - DigiTalent</title><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{brand:{navy:"#071b34",blue:"#0067d8",cyan:"#00c7f2",sky:"#e8f8ff",orange:"#ff9f1a",ink:"#101828"}},boxShadow:{soft:"0 18px 50px rgba(7, 27, 52, 0.12)"}}}};</script><style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}</style></head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <title>Client / Portfolio - DigiTalent</title>
+    <meta name="description" content="Halaman client dan portfolio DigiTalent berisi client showcase serta galeri dokumentasi training." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                navy: "#09468a",
+                blue: "#009adf",
+                cyan: "#7fd7ff",
+                sky: "#ecf8ff",
+                orange: "#f3a836",
+                ink: "#10233c",
+              },
+            },
+            boxShadow: { soft: "0 24px 60px rgba(9, 70, 138, 0.12)" },
+          },
+        },
+      };
+    </script>
+    <style>
+      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .gallery-photo {
+        background-image: linear-gradient(180deg, rgba(9, 70, 138, 0.08), rgba(9, 70, 138, 0.22)), var(--photo);
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
   <body class="bg-white text-brand-ink">
     <div id="site-header"></div>
     <script src="header.js"></script>
+
     <main>
-      <section class="bg-slate-50 py-16 lg:py-24"><div class="mx-auto max-w-7xl px-4"><p class="font-bold uppercase tracking-wide text-brand-blue">Client / Portfolio</p><h1 class="mt-4 max-w-4xl text-4xl font-extrabold text-brand-navy md:text-6xl">Dokumentasi training dan kolaborasi.</h1><p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">Halaman ini disiapkan untuk logo klien, nama training, nama perusahaan, tahun kegiatan, dan tiga foto dokumentasi per kegiatan.</p></div></section>
-      <section class="py-16 lg:py-20"><div class="mx-auto max-w-7xl px-4"><h2 class="text-3xl font-extrabold text-brand-navy">Our Clients</h2><div class="mt-8 grid gap-5 md:grid-cols-4"><div class="rounded-lg border border-dashed border-slate-300 p-10 text-center text-slate-500">Client Logo</div><div class="rounded-lg border border-dashed border-slate-300 p-10 text-center text-slate-500">Client Logo</div><div class="rounded-lg border border-dashed border-slate-300 p-10 text-center text-slate-500">Client Logo</div><div class="rounded-lg border border-dashed border-slate-300 p-10 text-center text-slate-500">Client Logo</div></div><h2 class="mt-14 text-3xl font-extrabold text-brand-navy">Gallery</h2><div class="mt-8 grid gap-6 md:grid-cols-3"><article class="rounded-lg border border-slate-200 p-6 shadow-sm"><div class="aspect-video rounded-md bg-brand-sky"></div><h3 class="mt-4 font-extrabold text-brand-navy">Nama Training</h3><p class="mt-2 text-sm text-slate-600">Nama Perusahaan - Tahun</p></article><article class="rounded-lg border border-slate-200 p-6 shadow-sm"><div class="aspect-video rounded-md bg-brand-sky"></div><h3 class="mt-4 font-extrabold text-brand-navy">Nama Training</h3><p class="mt-2 text-sm text-slate-600">Nama Perusahaan - Tahun</p></article><article class="rounded-lg border border-slate-200 p-6 shadow-sm"><div class="aspect-video rounded-md bg-brand-sky"></div><h3 class="mt-4 font-extrabold text-brand-navy">Nama Training</h3><p class="mt-2 text-sm text-slate-600">Nama Perusahaan - Tahun</p></article></div></div></section>
+      <section class="bg-gradient-to-br from-brand-sky via-white to-white py-14 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <p class="text-sm font-medium text-slate-500"><a href="index.html" class="hover:text-brand-blue">Home</a> / Client / Portfolio</p>
+          <p class="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Client / Portfolio</p>
+          <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.05] text-brand-navy sm:text-[2.8rem] lg:text-[3.5rem]">Client showcase and training gallery aligned with the website draft structure.</h1>
+        </div>
+      </section>
+
+      <section class="py-14 lg:py-18">
+        <div class="mx-auto max-w-7xl px-4">
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Our Clients</p>
+              <h2 class="mt-3 text-3xl font-black text-brand-navy">Logo area for client presentation</h2>
+            </div>
+          </div>
+          <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-[24px] border-2 border-dashed border-slate-300 bg-white px-6 py-10 text-center text-slate-500 shadow-soft">Client Logo</div>
+            <div class="rounded-[24px] border-2 border-dashed border-slate-300 bg-white px-6 py-10 text-center text-slate-500 shadow-soft">Client Logo</div>
+            <div class="rounded-[24px] border-2 border-dashed border-slate-300 bg-white px-6 py-10 text-center text-slate-500 shadow-soft">Client Logo</div>
+            <div class="rounded-[24px] border-2 border-dashed border-slate-300 bg-white px-6 py-10 text-center text-slate-500 shadow-soft">Client Logo</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 py-14 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Gallery</p>
+          <h2 class="mt-3 text-3xl font-black text-brand-navy">Per year training documentation showcase</h2>
+          <div class="mt-8 grid gap-6 lg:grid-cols-3">
+            <article class="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft">
+              <div class="gallery-photo aspect-[4/3] rounded-[22px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
+              <p class="mt-5 text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">2025</p>
+              <h3 class="mt-2 text-xl font-black text-brand-navy">Cybersecurity Awareness Training</h3>
+              <p class="mt-2 text-slate-600">Company Name Placeholder</p>
+              <p class="mt-2 leading-7 text-slate-600">Documentation area for training name, company name, and three representative photos per activity.</p>
+            </article>
+            <article class="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft">
+              <div class="gallery-photo aspect-[4/3] rounded-[22px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg')"></div>
+              <p class="mt-5 text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">2024</p>
+              <h3 class="mt-2 text-xl font-black text-brand-navy">Security Connect Program</h3>
+              <p class="mt-2 text-slate-600">Company Name Placeholder</p>
+              <p class="mt-2 leading-7 text-slate-600">Ready for curated event photos and portfolio details from finalized project materials.</p>
+            </article>
+            <article class="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft">
+              <div class="gallery-photo aspect-[4/3] rounded-[22px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg')"></div>
+              <p class="mt-5 text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">2023</p>
+              <h3 class="mt-2 text-xl font-black text-brand-navy">Digital Capability Session</h3>
+              <p class="mt-2 text-slate-600">Company Name Placeholder</p>
+              <p class="mt-2 leading-7 text-slate-600">Can be expanded later into a filterable year-by-year gallery when asset details are available.</p>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
+
     <div id="site-footer"></div>
     <script src="footer.js"></script>
   </body>

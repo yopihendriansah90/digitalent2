@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>DigiTalent - Empowering Digital Talent</title>
-    <meta name="description" content="DigiTalent menyediakan IT Training, sertifikasi, dan IT Outsourcing untuk mendukung transformasi digital perusahaan." />
+    <meta name="description" content="DigiTalent menyediakan IT Training dan IT Outsourcing untuk mendukung transformasi digital melalui talenta yang siap industri." />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -15,15 +15,17 @@
           extend: {
             colors: {
               brand: {
-                navy: "#071b34",
-                blue: "#0067d8",
-                cyan: "#00c7f2",
-                sky: "#e8f8ff",
-                orange: "#ff9f1a",
-                ink: "#101828",
+                navy: "#09468a",
+                blue: "#009adf",
+                cyan: "#7fd7ff",
+                sky: "#ecf8ff",
+                orange: "#f3a836",
+                ink: "#10233c",
               },
             },
-            boxShadow: { soft: "0 18px 50px rgba(7, 27, 52, 0.12)" },
+            boxShadow: {
+              soft: "0 24px 60px rgba(9, 70, 138, 0.12)",
+            },
           },
         },
       };
@@ -31,10 +33,33 @@
     <style>
       html { scroll-behavior: smooth; }
       body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .hero-entrance [data-hero-item] {
+        opacity: 0;
+        transform: translateY(26px);
+        animation: heroRise 760ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      .hero-entrance [data-hero-item="badges"] { animation-delay: 120ms; }
+      .hero-entrance [data-hero-item="title"] { animation-delay: 220ms; }
+      .hero-entrance [data-hero-item="copy"] { animation-delay: 340ms; }
+      .hero-entrance [data-hero-item="cta"] { animation-delay: 460ms; }
+      .hero-entrance [data-hero-item="media"] {
+        animation-delay: 240ms;
+        transform: translateY(26px) scale(0.98);
+      }
+      @keyframes heroRise {
+        from {
+          opacity: 0;
+          transform: translateY(26px) scale(0.985);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
       .reveal {
         opacity: 0;
         transform: translateY(24px);
-        transition: opacity 700ms ease, transform 700ms ease;
+        transition: opacity 760ms cubic-bezier(0.22, 1, 0.36, 1), transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
       }
       .reveal.is-visible {
         opacity: 1;
@@ -43,169 +68,242 @@
       .stagger-group .stagger-item {
         opacity: 0;
         transform: translateY(24px);
-        transition: opacity 700ms ease, transform 700ms ease;
+        transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1), transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
       }
       .stagger-group.is-visible .stagger-item {
         opacity: 1;
         transform: translateY(0);
       }
-      .stagger-group.is-visible .stagger-item:nth-child(1) { transition-delay: 80ms; }
-      .stagger-group.is-visible .stagger-item:nth-child(2) { transition-delay: 140ms; }
-      .stagger-group.is-visible .stagger-item:nth-child(3) { transition-delay: 200ms; }
-      .stagger-group.is-visible .stagger-item:nth-child(4) { transition-delay: 260ms; }
-      .stagger-group.is-visible .stagger-item:nth-child(5) { transition-delay: 320ms; }
-      .faq-panel {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 420ms ease, opacity 300ms ease, transform 420ms ease;
-        opacity: 0;
-        transform: translateY(-8px);
+      .stagger-group.is-visible .stagger-item:nth-child(1) { transition-delay: 70ms; }
+      .stagger-group.is-visible .stagger-item:nth-child(2) { transition-delay: 130ms; }
+      .stagger-group.is-visible .stagger-item:nth-child(3) { transition-delay: 190ms; }
+      .stagger-group.is-visible .stagger-item:nth-child(4) { transition-delay: 250ms; }
+      .stagger-group.is-visible .stagger-item:nth-child(5) { transition-delay: 310ms; }
+      .interactive-card {
+        transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, background-color 260ms ease;
+        will-change: transform;
       }
-      .faq-item.is-open .faq-panel {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .faq-icon {
-        transition: transform 300ms ease;
-      }
-      .faq-item.is-open .faq-icon {
-        transform: rotate(45deg);
-      }
-      .hero-photo {
-        background-image:
-          linear-gradient(180deg, rgba(7, 27, 52, 0.04), rgba(7, 27, 52, 0.12)),
-          var(--photo);
-        background-position: center;
-        background-size: cover;
-        transform: translate3d(0, 0, 0);
-        transition: transform 180ms linear;
-      }
-      .hero-photo-frame {
-        position: relative;
-        overflow: hidden;
-        border-radius: 0.5rem;
-        cursor: default;
-      }
-      .hero-photo-frame:focus-visible {
-        outline: 3px solid rgba(0, 103, 216, 0.34);
-        outline-offset: 4px;
-      }
-      @media (min-width: 1024px) {
-        .hero-photo-frame {
-          cursor: zoom-in;
-        }
-        .hero-photo-frame::after {
-          content: "Click to expand";
-          position: absolute;
-          left: 1rem;
-          bottom: 1rem;
-          z-index: 1;
-          border-radius: 9999px;
-          background: rgba(255, 255, 255, 0.92);
-          color: #071b34;
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0;
-          padding: 0.45rem 0.8rem;
-          box-shadow: 0 8px 24px rgba(7, 27, 52, 0.12);
-          opacity: 0;
-          transform: translateY(8px);
-          transition: opacity 220ms ease, transform 220ms ease;
-          pointer-events: none;
-        }
-        .hero-photo-frame:hover::after,
-        .hero-photo-frame:focus-visible::after {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .lightbox {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 240ms ease;
-      }
-      .lightbox.is-open {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .lightbox-dialog {
-        transform: translateY(18px) scale(0.98);
-        transition: transform 260ms ease;
-      }
-      .lightbox.is-open .lightbox-dialog {
-        transform: translateY(0) scale(1);
-      }
-      .lightbox-image {
-        max-height: min(72vh, 880px);
-      }
-      .value-card {
-        transition: background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
-      }
-      .value-card .value-number,
-      .value-card .value-title,
-      .value-card .value-copy {
-        transition: color 260ms ease;
-      }
-      .value-card:hover {
-        transform: translateY(-4px);
-        border-color: #071b34;
-        background-color: #071b34;
-        box-shadow: 0 18px 50px rgba(7, 27, 52, 0.18);
-      }
-      .value-card:hover .value-number {
-        color: #00c7f2;
-      }
-      .value-card:hover .value-title {
-        color: #ffffff;
-      }
-      .value-card:hover .value-copy {
-        color: rgba(255, 255, 255, 0.76);
-      }
-      .feature-card {
-        transition: background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
-      }
-      .feature-card .feature-number,
-      .feature-card .feature-title,
-      .feature-card .feature-copy {
-        transition: color 260ms ease;
-      }
-      .feature-card:hover {
-        transform: translateY(-4px);
-        border-color: #071b34;
-        background-color: #071b34;
-        box-shadow: 0 18px 50px rgba(7, 27, 52, 0.18);
-      }
-      .feature-card:hover .feature-number {
-        color: #00c7f2;
-      }
-      .feature-card:hover .feature-title {
-        color: #ffffff;
-      }
-      .feature-card:hover .feature-copy {
-        color: rgba(255, 255, 255, 0.76);
+      .interactive-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 30px 70px rgba(9, 70, 138, 0.16);
+        border-color: rgba(0, 154, 223, 0.28);
       }
       .cta-button {
         transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, color 220ms ease, border-color 220ms ease;
       }
       .cta-button:hover {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+      }
+      .hero-photo,
+      .gallery-photo {
+        background-image: linear-gradient(180deg, rgba(9, 70, 138, 0.08), rgba(9, 70, 138, 0.22)), var(--photo);
+        background-size: cover;
+        background-position: center;
+        transition: transform 420ms ease, filter 420ms ease;
+        will-change: transform;
+      }
+      .hero-photo-primary {
+        background-position: center top;
+      }
+      .hero-photo-secondary-top {
+        background-position: center 22%;
+      }
+      .hero-photo-secondary-bottom {
+        background-position: center 32%;
+      }
+      .hero-stack:hover .hero-photo,
+      .gallery-frame:hover .gallery-photo {
+        transform: scale(1.03);
+        filter: saturate(1.06);
+      }
+      .hero-panel {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border-radius: 28px;
+        background:
+          radial-gradient(circle at top left, rgba(0, 154, 223, 0.08), transparent 40%),
+          linear-gradient(135deg, rgba(9, 70, 138, 0.06), rgba(243, 168, 54, 0.04));
+        pointer-events: none;
+      }
+      .hero-photo-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: #fff;
+      }
+      .hero-photo-meta {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        border-radius: 18px;
+        background: rgba(9, 70, 138, 0.82);
+        color: #fff;
+        padding: 14px 16px;
+        backdrop-filter: blur(10px);
+      }
+      .hero-stat-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        background: #fff;
+        padding: 10px 14px;
+        box-shadow: 0 18px 40px rgba(9, 70, 138, 0.16);
+      }
+      .hero-stat-chip::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #f3a836;
+        flex: 0 0 auto;
+      }
+      .hero-proof-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .hero-proof-item {
+        border-radius: 20px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 16px;
+      }
+      .hero-proof-label {
+        color: #6b7a90;
+      }
+      .hero-proof-value {
+        color: #09468a;
+      }
+      .stats-card {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.05));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: transform 240ms ease, border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease;
+      }
+      .stats-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(127, 215, 255, 0.34);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.07));
+        box-shadow: 0 22px 40px rgba(3, 24, 51, 0.18);
+      }
+      .stats-kicker {
+        color: rgba(255, 255, 255, 0.66);
+      }
+      .stats-copy {
+        color: rgba(255, 255, 255, 0.94);
+      }
+      .values-grid {
+        display: grid;
+        gap: 20px;
+      }
+      .value-card {
+        position: relative;
+        min-height: 100%;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        background: linear-gradient(180deg, #ffffff, #fbfdff);
+        box-shadow: 0 16px 38px rgba(9, 70, 138, 0.08);
+        transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+      }
+      .value-card::before {
+        content: "";
+        position: absolute;
+        left: 24px;
+        top: 0;
+        width: 58px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f3a836, #009adf);
+      }
+      .value-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 154, 223, 0.24);
+        box-shadow: 0 24px 52px rgba(9, 70, 138, 0.12);
+      }
+      .value-index {
+        color: #f3a836;
+      }
+      .value-copy {
+        color: #4b5b74;
+      }
+      .why-grid {
+        display: grid;
+        gap: 20px;
+      }
+      .why-card {
+        position: relative;
+        min-height: 100%;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        background: linear-gradient(180deg, #ffffff, #fbfdff);
+        box-shadow: 0 16px 38px rgba(9, 70, 138, 0.08);
+        transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+      }
+      .why-card::before {
+        content: "";
+        position: absolute;
+        left: 24px;
+        top: 0;
+        width: 58px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f3a836, #009adf);
+      }
+      .why-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 154, 223, 0.24);
+        box-shadow: 0 24px 52px rgba(9, 70, 138, 0.12);
+      }
+      .why-copy {
+        color: #51627c;
+      }
+      @media (min-width: 1280px) {
+        .values-grid {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+        .values-grid .value-card:nth-child(-n+3) {
+          grid-column: span 2 / span 2;
+        }
+        .values-grid .value-card:nth-child(4) {
+          grid-column: 2 / span 2;
+        }
+        .values-grid .value-card:nth-child(5) {
+          grid-column: 4 / span 2;
+        }
+        .why-grid {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+        .why-grid .why-card:nth-child(-n+3) {
+          grid-column: span 2 / span 2;
+        }
+        .why-grid .why-card:nth-child(4) {
+          grid-column: 2 / span 2;
+        }
+        .why-grid .why-card:nth-child(5) {
+          grid-column: 4 / span 2;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
+        .hero-entrance [data-hero-item],
         .reveal,
         .stagger-group .stagger-item,
-        .faq-panel,
-        .faq-icon,
-        .hero-photo,
-        .hero-photo-frame::after,
-        .lightbox,
-        .lightbox-dialog,
+        .interactive-card,
         .value-card,
-        .feature-card,
-        .cta-button {
-          transition: none !important;
-          transform: none !important;
+        .why-card,
+        .stats-card,
+        .cta-button,
+        .hero-photo,
+        .gallery-photo {
           opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+          animation: none !important;
         }
       }
     </style>
@@ -215,43 +313,58 @@
     <script src="header.js"></script>
 
     <main>
-      <section class="overflow-hidden border-b border-slate-100 bg-white reveal">
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:py-14 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12 lg:py-24">
+      <section class="hero-entrance overflow-hidden border-b border-slate-200 bg-gradient-to-br from-brand-sky via-white to-white">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:py-14 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-14 lg:py-24">
           <div>
-            <div class="mb-5 flex flex-wrap gap-2.5 sm:gap-3">
-              <span class="rounded-full border border-brand-cyan/40 bg-white px-3 py-1.5 text-xs font-semibold text-brand-blue sm:px-4 sm:py-2 sm:text-sm">Part of SGI Asia Group</span>
-              <span class="rounded-full border border-brand-orange/40 bg-white px-3 py-1.5 text-xs font-semibold text-brand-navy sm:px-4 sm:py-2 sm:text-sm">Authorized CompTIA Partner Ecosystem</span>
+            <div class="mb-5 flex flex-wrap gap-3" data-hero-item="badges">
+              <span class="rounded-full border border-brand-blue/20 bg-white px-4 py-2 text-sm font-semibold text-brand-blue">Part of SGI Asia Group</span>
+              <span class="rounded-full border border-brand-orange/30 bg-white px-4 py-2 text-sm font-semibold text-brand-navy">Industry-Ready Talent Focus</span>
             </div>
-            <h1 class="max-w-4xl text-[2rem] font-black leading-[1.08] tracking-normal text-brand-navy sm:text-[2.6rem] lg:text-[56px]">Empowering Digital Talent, Enabling Global Success</h1>
-            <div class="mt-5 max-w-3xl space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <h1 class="max-w-4xl text-[2.25rem] font-black leading-[1.02] text-brand-navy sm:text-[2.9rem] lg:text-[4.1rem]" data-hero-item="title">Empowering Digital Talent, Enabling Global Success</h1>
+            <div class="mt-5 max-w-3xl space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8" data-hero-item="copy">
               <p>PT. Systech Talenta Digital, known as DigiTalent, was founded in August 2025 with a clear purpose: to support digital transformation through capable, industry-ready talent. As part of the SGI Asia Group, we focus on two core services: IT Training and IT Outsourcing.</p>
               <p>We build professionals through structured, practical training and provide trusted talent aligned with real business needs. Guided by integrity, professionalism, and quality, we deliver measurable value for our partners and support sustainable digital growth.</p>
             </div>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white shadow-soft hover:bg-brand-navy sm:flex-1 lg:flex-none" href="training.html">View Training</a>
-              <a class="cta-button rounded-md border border-brand-blue px-6 py-3.5 text-center font-bold text-brand-blue hover:bg-brand-sky sm:flex-1 lg:flex-none" href="outsourcing.html">Request IT Talent</a>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-hero-item="cta">
+              <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white shadow-soft hover:bg-brand-navy" href="services.html">Explore Services</a>
+              <a class="cta-button rounded-md border border-brand-blue px-6 py-3.5 text-center font-bold text-brand-blue hover:bg-brand-sky" href="contact.html">Free Consultation</a>
             </div>
-          </div>
-          <div class="rounded-lg border border-slate-100 bg-slate-50 p-2.5 shadow-sm sm:p-3">
-            <div class="grid gap-3 sm:gap-4 md:grid-cols-[1.2fr_0.8fr]">
-              <button class="hero-photo-frame block text-left" type="button" aria-label="Open large image: DigiTalent training session" data-lightbox-image="https://www.sgi-asia.co.id/Activities/CSAS.jpg" data-lightbox-alt="DigiTalent training session">
-                <div class="hero-photo parallax-photo min-h-[280px] rounded-lg shadow-sm sm:min-h-[360px] lg:min-h-[440px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
-              </button>
-              <div class="grid gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-1">
-                <button class="hero-photo-frame block text-left" type="button" aria-label="Open large image: DigiTalent CompTIA event" data-lightbox-image="https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg" data-lightbox-alt="DigiTalent CompTIA event">
-                  <div class="hero-photo parallax-photo min-h-[200px] rounded-lg shadow-sm sm:min-h-[220px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg')"></div>
-                </button>
-                <button class="hero-photo-frame block text-left" type="button" aria-label="Open large image: DigiTalent corporate meeting" data-lightbox-image="https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg" data-lightbox-alt="DigiTalent corporate meeting">
-                  <div class="hero-photo parallax-photo min-h-[200px] rounded-lg shadow-sm sm:min-h-[220px] lg:min-h-[202px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg')"></div>
-                </button>
+            <div class="hero-proof-grid mt-8 max-w-2xl" data-hero-item="cta">
+              <div class="hero-proof-item">
+                <p class="hero-proof-label text-xs font-semibold uppercase tracking-[0.18em]">Core Services</p>
+                <p class="hero-proof-value mt-2 text-lg font-black">IT Training & IT Outsourcing</p>
+              </div>
+              <div class="hero-proof-item">
+                <p class="hero-proof-label text-xs font-semibold uppercase tracking-[0.18em]">Operating Standard</p>
+                <p class="hero-proof-value mt-2 text-lg font-black">Integrity, Professionalism, Quality</p>
               </div>
             </div>
-            <div class="mt-3 rounded-lg border border-slate-200 bg-white px-4 py-4 shadow-sm sm:mt-4 sm:px-5">
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Core Services</p>
-                <div class="flex flex-col gap-2 text-sm font-semibold text-brand-navy sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
-                  <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>IT Training</span>
-                  <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-orange"></span>IT Outsourcing</span>
+          </div>
+
+          <div class="hero-panel hero-stack rounded-[36px] border border-slate-200 bg-white p-4 shadow-soft sm:p-5" data-hero-item="media">
+            <div class="grid gap-4 sm:grid-cols-[1.02fr_0.98fr]">
+              <div class="hero-photo-card rounded-[28px] sm:min-h-[450px]">
+                <div class="hero-photo hero-photo-primary min-h-[320px] rounded-[28px] sm:h-full" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
+                <div class="hero-photo-meta">
+                  <p class="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-brand-cyan">Professional Training</p>
+                  <p class="mt-2 text-lg font-bold leading-snug">Structured learning sessions designed for practical IT capability growth.</p>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <div class="hero-photo-card rounded-[28px]">
+                  <div class="hero-photo hero-photo-secondary-top min-h-[200px] rounded-[28px] sm:min-h-[214px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Cyber%20Security%20Connect%202024.jpg')"></div>
+                </div>
+                <div class="hero-photo-card rounded-[28px]">
+                  <div class="hero-photo hero-photo-secondary-bottom min-h-[200px] rounded-[28px] sm:min-h-[214px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/SGIeudoo.jpg')"></div>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                  <div class="hero-stat-chip">
+                    <span class="text-sm font-bold text-brand-navy">Structured capability building</span>
+                  </div>
+                  <div class="hero-stat-chip">
+                    <span class="text-sm font-bold text-brand-navy">Trusted digital talent delivery</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -259,270 +372,157 @@
         </div>
       </section>
 
-      <section class="reveal border-t border-slate-100 bg-white py-14 sm:py-16 lg:py-20">
+      <section class="reveal bg-white py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
-          <div>
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p class="font-bold uppercase tracking-wide text-brand-blue">Brand Identity</p>
-              <h2 class="mt-3 text-[1.75rem] font-extrabold text-brand-navy sm:text-3xl md:text-4xl">Value</h2>
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Core Values</p>
+              <h2 class="mt-3 text-3xl font-black text-brand-navy lg:text-[2.7rem]">The values shaping how DigiTalent works.</h2>
             </div>
           </div>
-          <div class="stagger-group mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-[0.92fr_1.08fr]">
-            <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7 lg:min-h-[420px]">
-              <span class="value-number text-sm font-extrabold text-brand-blue">01</span>
-              <h3 class="value-title mt-4 text-[1.6rem] font-extrabold text-brand-navy sm:mt-5 sm:text-3xl">Integrity</h3>
-              <p class="value-copy mt-4 max-w-md leading-7 text-slate-600 sm:mt-5">Upholding honesty, responsibility, and professional ethics.</p>
+
+          <div class="values-grid stagger-group mt-8">
+            <article class="value-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <p class="value-index text-sm font-extrabold">01</p>
+              <h3 class="mt-4 text-[1.65rem] font-black leading-tight text-brand-navy">Integrity</h3>
+              <p class="value-copy mt-4 text-lg leading-8">Upholding honesty, responsibility, and professional ethics.</p>
             </article>
-            <div class="grid gap-4 sm:grid-cols-2 sm:gap-5">
-              <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <span class="value-number text-sm font-extrabold text-brand-blue">02</span>
-                <h3 class="value-title mt-4 text-xl font-extrabold text-brand-navy">Adaptive</h3>
-                <p class="value-copy mt-3 text-sm leading-6 text-slate-600">Continuously adapting to the latest technological advancements.</p>
-              </article>
-              <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <span class="value-number text-sm font-extrabold text-brand-blue">03</span>
-                <h3 class="value-title mt-4 text-xl font-extrabold text-brand-navy">Excellence</h3>
-                <p class="value-copy mt-3 text-sm leading-6 text-slate-600">Committed to delivering the best results and services.</p>
-              </article>
-              <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <span class="value-number text-sm font-extrabold text-brand-blue">04</span>
-                <h3 class="value-title mt-4 text-xl font-extrabold text-brand-navy">Collaboration</h3>
-                <p class="value-copy mt-3 text-sm leading-6 text-slate-600">Building a strong ecosystem bridging academia, professionals, communities, and the industry.</p>
-              </article>
-              <article class="value-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <span class="value-number text-sm font-extrabold text-brand-blue">05</span>
-                <h3 class="value-title mt-4 text-xl font-extrabold text-brand-navy">Empowerment</h3>
-                <p class="value-copy mt-3 text-sm leading-6 text-slate-600">Providing opportunities for individuals to grow and create a positive impact in the digital world.</p>
-              </article>
-            </div>
+            <article class="value-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <p class="value-index text-sm font-extrabold">02</p>
+              <h3 class="mt-4 text-[1.65rem] font-black leading-tight text-brand-navy">Adaptive</h3>
+              <p class="value-copy mt-4 text-lg leading-8">Continuously adapting to the latest technological advancements.</p>
+            </article>
+            <article class="value-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <p class="value-index text-sm font-extrabold">03</p>
+              <h3 class="mt-4 text-[1.65rem] font-black leading-tight text-brand-navy">Excellence</h3>
+              <p class="value-copy mt-4 text-lg leading-8">Committed to delivering the best results and services.</p>
+            </article>
+            <article class="value-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <p class="value-index text-sm font-extrabold">04</p>
+              <h3 class="mt-4 text-[1.65rem] font-black leading-tight text-brand-navy">Collaboration</h3>
+              <p class="value-copy mt-4 text-lg leading-8">Building a strong ecosystem bridging academia, professionals, communities, and industry.</p>
+            </article>
+            <article class="value-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <p class="value-index text-sm font-extrabold">05</p>
+              <h3 class="mt-4 text-[1.65rem] font-black leading-tight text-brand-navy">Empowerment</h3>
+              <p class="value-copy mt-4 text-lg leading-8">Providing opportunities for individuals to grow and create a positive impact in the digital world.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="reveal border-y border-slate-100 bg-slate-50 py-14 sm:py-16 lg:py-20">
+      <section class="reveal bg-brand-navy py-14 text-white sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
-          <div>
+          <div class="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p class="font-bold uppercase tracking-wide text-brand-blue">In Numbers</p>
-              <h2 class="mt-3 text-[1.75rem] font-extrabold text-brand-navy sm:text-3xl md:text-4xl">Progress Counter</h2>
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-orange">Progress Counter</p>
             </div>
           </div>
-          <div class="stagger-group mt-8 grid divide-y divide-slate-200 border-y border-slate-200 sm:mt-10 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
-              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="500" data-suffix="+">500+</div>
-              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Completed<br />Training</p>
-            </div>
-            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
-              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="50" data-suffix="+">50+</div>
-              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Completed<br />Certification</p>
-            </div>
-            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
-              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="500" data-suffix="+">500+</div>
-              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Company<br />Client</p>
-            </div>
-            <div class="stagger-item px-5 py-8 text-center sm:px-6 sm:py-10">
-              <div class="counter text-4xl font-black leading-none text-brand-blue sm:text-5xl md:text-6xl" data-target="100" data-suffix="+">100+</div>
-              <p class="mt-5 text-sm font-medium leading-6 text-slate-600 sm:mt-6">Total<br />Training</p>
-            </div>
+          <div class="stagger-group mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <article class="stats-card stagger-item rounded-[26px] p-6">
+              <p class="stats-kicker text-xs font-semibold uppercase tracking-[0.18em]">Training</p>
+              <p class="mt-4 text-4xl font-black text-brand-cyan" data-counter="500" data-suffix="+">0+</p>
+              <p class="stats-copy mt-3 text-lg font-bold">Completed Training Participants</p>
+            </article>
+            <article class="stats-card stagger-item rounded-[26px] p-6">
+              <p class="stats-kicker text-xs font-semibold uppercase tracking-[0.18em]">Certification</p>
+              <p class="mt-4 text-4xl font-black text-brand-cyan" data-counter="50" data-suffix="+">0+</p>
+              <p class="stats-copy mt-3 text-lg font-bold">Completed Certifications</p>
+            </article>
+            <article class="stats-card stagger-item rounded-[26px] p-6">
+              <p class="stats-kicker text-xs font-semibold uppercase tracking-[0.18em]">Clients</p>
+              <p class="mt-4 text-4xl font-black text-brand-cyan" data-counter="500" data-suffix="+">0+</p>
+              <p class="stats-copy mt-3 text-lg font-bold">Company Client Participants</p>
+            </article>
+            <article class="stats-card stagger-item rounded-[26px] p-6">
+              <p class="stats-kicker text-xs font-semibold uppercase tracking-[0.18em]">Programs</p>
+              <p class="mt-4 text-4xl font-black text-brand-cyan" data-counter="100" data-suffix="+">0+</p>
+              <p class="stats-copy mt-3 text-lg font-bold">Total Training Programs</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="reveal bg-white py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
-          <div>
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p class="font-bold uppercase tracking-wide text-brand-blue">Why DigiTalent</p>
-              <h2 class="mt-3 text-[1.75rem] font-extrabold text-brand-navy sm:text-3xl md:text-4xl">Why Choose Us</h2>
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Why Choose Us</p>
+              <h2 class="mt-3 text-3xl font-black text-brand-navy lg:text-[2.7rem]">A practical partner for talent development and digital execution.</h2>
             </div>
           </div>
-          <div class="stagger-group mt-8 grid gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-2">
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <span class="feature-number text-sm font-extrabold text-brand-blue">01</span>
-              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Affiliate with SGI Asia as an Authorized CompTIA Partner</h3>
-              <p class="feature-copy mt-4 leading-7 text-slate-600">Our curriculum and services align with global industry standards, continuously updated to remain relevant with real-world case studies, the evolving cyber threat landscape, and current industry demands.</p>
+
+          <div class="why-grid stagger-group mt-8">
+            <article class="why-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <h3 class="text-[1.5rem] font-black leading-tight text-brand-navy">Affiliate with SGI Asia as an Authorized CompTIA Partner</h3>
+              <p class="why-copy mt-4 text-lg leading-8">Our curriculum and services align with global standards and remain relevant through current case studies, evolving cyber risks, and real industry needs.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <span class="feature-number text-sm font-extrabold text-brand-blue">02</span>
-              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Experienced Professionals</h3>
-              <p class="feature-copy mt-4 leading-7 text-slate-600">We are backed by certified experts and professionals with proven hands-on experience in executing real-world projects.</p>
+            <article class="why-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <h3 class="text-[1.5rem] font-black leading-tight text-brand-navy">Experienced Professionals</h3>
+              <p class="why-copy mt-4 text-lg leading-8">DigiTalent is supported by certified experts and practitioners with proven hands-on project experience across real working environments.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <span class="feature-number text-sm font-extrabold text-brand-blue">03</span>
-              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Backed by a Robust Ecosystem</h3>
-              <p class="feature-copy mt-4 leading-7 text-slate-600">Our competitive edge is reinforced by the SGI Asia Ecosystem, granting us access to an extensive client network and deep insights into Indonesia's specific IT landscape and requirements.</p>
+            <article class="why-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <h3 class="text-[1.5rem] font-black leading-tight text-brand-navy">Backed by a Robust Ecosystem</h3>
+              <p class="why-copy mt-4 text-lg leading-8">Through the SGI Asia ecosystem, we gain access to wider client networks and stronger insights into Indonesia's specific IT landscape and requirements.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <span class="feature-number text-sm font-extrabold text-brand-blue">04</span>
-              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Solution-Oriented Approach & Career Support</h3>
-              <p class="feature-copy mt-4 leading-7 text-slate-600">We provide comprehensive recruitment support and career development, empowering our trainees to solve practical IT challenges effectively.</p>
+            <article class="why-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <h3 class="text-[1.5rem] font-black leading-tight text-brand-navy">Solution-Oriented Approach & Career Support</h3>
+              <p class="why-copy mt-4 text-lg leading-8">We combine practical training, recruitment support, and career development so participants are ready to solve actual IT challenges effectively.</p>
             </article>
-            <article class="feature-card stagger-item rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7 lg:col-span-2">
-              <span class="feature-number text-sm font-extrabold text-brand-blue">05</span>
-              <h3 class="feature-title mt-3 text-xl font-extrabold text-brand-navy sm:text-2xl">Unwavering Commitment to Quality</h3>
-              <p class="feature-copy mt-4 max-w-4xl leading-7 text-slate-600">We maintain an absolute commitment to quality and client satisfaction, driven by excellence, professionalism, and delivering impactful results for your business.</p>
+            <article class="why-card stagger-item rounded-[26px] p-6 sm:p-7">
+              <h3 class="text-[1.5rem] font-black leading-tight text-brand-navy">Unwavering Commitment to Quality</h3>
+              <p class="why-copy mt-4 text-lg leading-8">Every service is delivered with a strong focus on excellence, professionalism, and measurable satisfaction for our partners and clients.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="reveal border-t border-slate-100 bg-brand-sky/30 py-14 sm:py-16 lg:py-20">
-        <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div class="rounded-lg bg-slate-50 p-1 lg:sticky lg:top-28">
-            <p class="font-bold uppercase tracking-wide text-brand-blue">Registration Support</p>
-            <h2 class="mt-3 text-[1.75rem] font-extrabold leading-tight text-brand-navy sm:text-3xl md:text-4xl">FAQ & Registration Link</h2>
-            <p class="mt-5 leading-7 text-slate-600">The DigiTalent team can help map your training, certification, and IT talent needs based on your business goals.</p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white shadow-soft hover:bg-brand-navy sm:flex-1 lg:flex-none" href="contact.html">Consult Program</a>
-              <a class="cta-button rounded-md border border-brand-blue bg-white px-6 py-3.5 text-center font-bold text-brand-blue hover:bg-brand-sky sm:flex-1 lg:flex-none" href="training.html">View Training Options</a>
+      <section class="reveal bg-slate-50 py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div class="gallery-frame rounded-[32px] bg-white p-3 shadow-soft">
+              <div class="gallery-photo min-h-[320px] rounded-[26px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/CSAS.jpg')"></div>
             </div>
-          </div>
-          <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
-            <article class="faq-item is-open border-b border-slate-200">
-              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-6 text-left font-extrabold text-brand-navy hover:bg-slate-50 sm:px-6 sm:py-7" type="button" aria-expanded="true">
-                <span>Why choose training at DigiTalent?</span>
-                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-5 pb-6 leading-7 text-slate-600 sm:px-6 sm:pb-7">DigiTalent combines practical curriculum, experienced mentors, industry case studies, hands-on labs, and the SGI Asia ecosystem to keep training relevant to real work needs.</p>
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Next Step</p>
+              <h2 class="mt-3 text-3xl font-black text-brand-navy lg:text-[2.7rem]">Explore the full service structure and continue to the page set from the draft.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-600">Halaman lanjutan sekarang sudah mengikuti susunan draf: About Us, Services, Vision & Mission, Client / Portfolio, Contact, Training, dan Outsourcing.</p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a class="cta-button rounded-md bg-brand-blue px-6 py-3.5 text-center font-bold text-white hover:bg-brand-navy" href="about.html">About Us</a>
+                <a class="cta-button rounded-md bg-brand-orange px-6 py-3.5 text-center font-bold text-brand-navy hover:bg-brand-navy hover:text-white" href="vision-mission.html">Vision & Mission</a>
               </div>
-            </article>
-            <article class="faq-item border-b border-slate-200">
-              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-6 text-left font-extrabold text-brand-navy hover:bg-slate-50 sm:px-6 sm:py-7" type="button" aria-expanded="false">
-                <span>How do I choose the right training for my needs?</span>
-                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-5 pb-6 leading-7 text-slate-600 sm:px-6 sm:pb-7">Training selection can start from competency needs, participant level, certification targets, class format, and the planned work application. DigiTalent can help recommend the right program.</p>
-              </div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-6 text-left font-extrabold text-brand-navy hover:bg-slate-50 sm:px-6 sm:py-7" type="button" aria-expanded="false">
-                <span>What facilities are provided?</span>
-                <span class="faq-icon text-2xl leading-none text-brand-blue">+</span>
-              </button>
-              <div class="faq-panel">
-                <p class="px-5 pb-6 leading-7 text-slate-600 sm:px-6 sm:pb-7">Programs may include direct online access, interactive discussions with trainers, virtual learning support, hands-on labs, project-based assessments, and real-world scenarios.</p>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <div id="hero-lightbox" class="lightbox fixed inset-0 z-[80] flex items-center justify-center bg-brand-navy/88 px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="hero-lightbox-title" aria-hidden="true">
-      <div class="absolute inset-0" data-lightbox-close></div>
-      <div class="lightbox-dialog relative z-[1] w-full max-w-6xl">
-        <button class="absolute right-3 top-3 rounded-full bg-white/92 px-3 py-2 text-sm font-bold text-brand-navy shadow-sm transition hover:bg-white sm:right-4 sm:top-4" type="button" data-lightbox-close aria-label="Close image viewer">Close</button>
-        <div class="overflow-hidden rounded-2xl border border-white/12 bg-white p-3 shadow-2xl">
-          <p id="hero-lightbox-title" class="sr-only">Expanded DigiTalent image preview</p>
-          <img id="hero-lightbox-image" class="lightbox-image w-full rounded-xl object-contain" src="" alt="" />
-        </div>
-      </div>
-    </div>
-
     <div id="site-footer"></div>
     <script src="footer.js"></script>
     <script>
       const revealElements = document.querySelectorAll(".reveal, .stagger-group");
-      const counters = document.querySelectorAll(".counter");
-      const faqItems = document.querySelectorAll(".faq-item");
-      const parallaxPhotos = document.querySelectorAll(".parallax-photo");
-      const lightboxTriggers = document.querySelectorAll("[data-lightbox-image]");
-      const lightbox = document.getElementById("hero-lightbox");
-      const lightboxImage = document.getElementById("hero-lightbox-image");
-      const lightboxClosers = document.querySelectorAll("[data-lightbox-close]");
-      const lightboxCloseButton = lightbox.querySelector("button[data-lightbox-close]");
+      const counters = document.querySelectorAll("[data-counter]");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const desktopLightbox = window.matchMedia("(min-width: 1024px)");
-      let activeLightboxTrigger = null;
 
-      function setFaqPanel(item, open) {
-        const button = item.querySelector(".faq-toggle");
-        const panel = item.querySelector(".faq-panel");
-
-        item.classList.toggle("is-open", open);
-        button.setAttribute("aria-expanded", open ? "true" : "false");
-        panel.style.maxHeight = open ? `${panel.scrollHeight}px` : "0px";
-      }
-
-      faqItems.forEach((item) => {
-        const button = item.querySelector(".faq-toggle");
-        setFaqPanel(item, item.classList.contains("is-open"));
-
-        button.addEventListener("click", () => {
-          const shouldOpen = !item.classList.contains("is-open");
-          faqItems.forEach((currentItem) => setFaqPanel(currentItem, currentItem === item && shouldOpen));
-        });
-      });
-
-      function animateCounter(counter) {
-        if (counter.dataset.animated === "true") return;
-
-        const target = Number(counter.dataset.target || 0);
-        const suffix = counter.dataset.suffix || "";
+      function animateCounter(element) {
+        const target = Number(element.dataset.counter || "0");
+        const suffix = element.dataset.suffix || "";
         const duration = 1400;
         const start = performance.now();
 
-        counter.dataset.animated = "true";
-
-        function updateCounter(now) {
+        function tick(now) {
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
           const value = Math.round(target * eased);
-
-          counter.textContent = `${value}${suffix}`;
+          element.textContent = `${value}${suffix}`;
 
           if (progress < 1) {
-            window.requestAnimationFrame(updateCounter);
+            window.requestAnimationFrame(tick);
           }
         }
 
-        window.requestAnimationFrame(updateCounter);
+        window.requestAnimationFrame(tick);
       }
-
-      function openLightbox(src, alt, trigger) {
-        activeLightboxTrigger = trigger || null;
-        lightboxImage.src = src;
-        lightboxImage.alt = alt || "DigiTalent image preview";
-        lightbox.classList.add("is-open");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.classList.add("overflow-hidden");
-        window.requestAnimationFrame(() => {
-          lightboxCloseButton.focus();
-        });
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove("is-open");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("overflow-hidden");
-        if (activeLightboxTrigger) {
-          activeLightboxTrigger.focus();
-        }
-        window.setTimeout(() => {
-          if (lightbox.classList.contains("is-open")) return;
-          lightboxImage.src = "";
-          lightboxImage.alt = "";
-        }, 220);
-      }
-
-      lightboxTriggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          if (!desktopLightbox.matches) return;
-          openLightbox(trigger.dataset.lightboxImage, trigger.dataset.lightboxAlt, trigger);
-        });
-      });
-
-      lightboxClosers.forEach((closer) => {
-        closer.addEventListener("click", closeLightbox);
-      });
-
-      window.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-          closeLightbox();
-        }
-      });
 
       if (!reduceMotion && "IntersectionObserver" in window) {
         const revealObserver = new IntersectionObserver((entries) => {
@@ -531,47 +531,28 @@
             entry.target.classList.add("is-visible");
             revealObserver.unobserve(entry.target);
           });
-        }, { threshold: 0.18 });
+        }, { threshold: 0.16 });
 
         revealElements.forEach((element) => revealObserver.observe(element));
 
         const counterObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
+            const element = entry.target;
+            if (element.dataset.counted === "true") return;
+            element.dataset.counted = "true";
+            animateCounter(element);
+            counterObserver.unobserve(element);
           });
-        }, { threshold: 0.45 });
+        }, { threshold: 0.6 });
 
-        counters.forEach((counter) => counterObserver.observe(counter));
-
-        const updateParallax = () => {
-          parallaxPhotos.forEach((photo) => {
-            const rect = photo.getBoundingClientRect();
-            const viewportCenter = window.innerHeight / 2;
-            const offset = (rect.top + rect.height / 2 - viewportCenter) * -0.03;
-
-            photo.style.transform = `translate3d(0, ${Math.max(Math.min(offset, 10), -10)}px, 0)`;
-          });
-        };
-
-        updateParallax();
-        window.addEventListener("scroll", updateParallax, { passive: true });
-        window.addEventListener("resize", updateParallax);
+        counters.forEach((element) => counterObserver.observe(element));
       } else {
         revealElements.forEach((element) => element.classList.add("is-visible"));
-        counters.forEach((counter) => {
-          counter.textContent = `${counter.dataset.target || "0"}${counter.dataset.suffix || ""}`;
+        counters.forEach((element) => {
+          element.textContent = `${element.dataset.counter || "0"}${element.dataset.suffix || ""}`;
         });
       }
-
-      window.addEventListener("resize", () => {
-        faqItems.forEach((item) => {
-          if (item.classList.contains("is-open")) {
-            item.querySelector(".faq-panel").style.maxHeight = `${item.querySelector(".faq-panel").scrollHeight}px`;
-          }
-        });
-      });
     </script>
   </body>
 </html>
