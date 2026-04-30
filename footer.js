@@ -2,15 +2,15 @@ const footerMount = document.getElementById("site-footer");
 
 if (footerMount) {
   footerMount.innerHTML = `
-    <footer class="bg-brand-navy text-white">
+    <footer class="bg-[linear-gradient(180deg,_#009adf,_#18aceb_52%,_#09468a_100%)] text-white">
       <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 lg:grid-cols-[1.25fr_0.75fr_0.9fr_1.1fr]">
         <div>
           <img src="Logo/PNG/Horizontal_Background Gelap.png" alt="DigiTalent" class="h-14 w-auto" />
           <p class="mt-5 max-w-md leading-7 text-white/70">PT. Systech Talenta Digital, known as DigiTalent, supports digital transformation through capable, industry-ready talent. As part of SGI Asia Group, we focus on IT Training and IT Outsourcing.</p>
           <div class="mt-6 flex flex-wrap gap-2">
-            <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-cyan">SGI Asia Group</span>
-            <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-orange">Integrity</span>
-            <span class="rounded bg-white/10 px-3 py-1 text-sm font-semibold text-brand-orange">Adaptive</span>
+            <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-brand-cyan">SGI Asia Group</span>
+            <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-brand-orange">Integrity</span>
+            <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-brand-orange">Adaptive</span>
           </div>
         </div>
         <div class="hidden lg:block">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>Services - DigiTalent</title>
     <meta name="description" content="Layanan DigiTalent mencakup IT Training dan IT Outsourcing sesuai kebutuhan industri dan transformasi digital." />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,11 +20,13 @@
                 cyan: "#7fd7ff",
                 sky: "#ecf8ff",
                 orange: "#f3a836",
+                peach: "#fff1df",
+                cream: "#fff8ef",
                 ink: "#10233c",
               },
             },
             boxShadow: {
-              soft: "0 24px 60px rgba(9, 70, 138, 0.12)",
+              soft: "0 28px 70px rgba(9, 70, 138, 0.12)",
             },
           },
         },
@@ -32,7 +34,13 @@
     </script>
     <style>
       html { scroll-behavior: smooth; }
-      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      body {
+        font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(0, 154, 223, 0.12), transparent 24%),
+          radial-gradient(circle at top right, rgba(127, 215, 255, 0.18), transparent 30%),
+          linear-gradient(180deg, #fafdff 0%, #ffffff 100%);
+      }
       .hero-entrance [data-hero-item] {
         opacity: 0;
         transform: translateY(26px);
@@ -78,8 +86,10 @@
       .section-card {
         position: relative;
         min-height: 100%;
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        background: linear-gradient(180deg, #ffffff, #fbfdff);
+        border: 1px solid rgba(0, 154, 223, 0.14);
+        background:
+          radial-gradient(circle at top right, rgba(127, 215, 255, 0.22), transparent 38%),
+          linear-gradient(180deg, #ffffff, #f4fbff);
         box-shadow: 0 16px 38px rgba(9, 70, 138, 0.08);
         transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
       }
@@ -101,7 +111,7 @@
       .service-hero-panel {
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border: 1px solid rgba(0, 154, 223, 0.14);
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 248, 255, 0.86));
         box-shadow: 0 24px 60px rgba(9, 70, 138, 0.12);
       }
@@ -111,8 +121,9 @@
         inset: 18px;
         border-radius: 28px;
         background:
-          radial-gradient(circle at top left, rgba(0, 154, 223, 0.08), transparent 40%),
-          linear-gradient(135deg, rgba(9, 70, 138, 0.05), rgba(243, 168, 54, 0.04));
+          radial-gradient(circle at top left, rgba(127, 215, 255, 0.24), transparent 38%),
+          radial-gradient(circle at bottom right, rgba(0, 154, 223, 0.14), transparent 40%),
+          linear-gradient(135deg, rgba(9, 70, 138, 0.05), rgba(0, 154, 223, 0.08));
         pointer-events: none;
       }
       .service-summary-grid {
@@ -121,7 +132,7 @@
       }
       .service-summary-item {
         border-radius: 24px;
-        border: 1px solid rgba(148, 163, 184, 0.16);
+        border: 1px solid rgba(0, 154, 223, 0.12);
         background: rgba(255, 255, 255, 0.94);
         padding: 20px;
         box-shadow: 0 16px 34px rgba(9, 70, 138, 0.08);
@@ -148,9 +159,9 @@
         gap: 12px;
       }
       .domain-chart-card {
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border: 1px solid rgba(0, 154, 223, 0.14);
         background:
-          radial-gradient(circle at top left, rgba(0, 154, 223, 0.08), transparent 34%),
+          radial-gradient(circle at top left, rgba(127, 215, 255, 0.16), transparent 34%),
           linear-gradient(180deg, #f8fcff, #eef7ff);
         box-shadow: 0 20px 44px rgba(9, 70, 138, 0.1);
       }
@@ -161,7 +172,7 @@
       .domain-chart-figure {
         overflow: hidden;
         border-radius: 24px;
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border: 1px solid rgba(0, 154, 223, 0.14);
         background: rgba(255, 255, 255, 0.96);
         box-shadow: 0 18px 38px rgba(9, 70, 138, 0.08);
         opacity: 0;
@@ -200,7 +211,7 @@
       }
       .domain-chip {
         border-radius: 18px;
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border: 1px solid rgba(0, 154, 223, 0.14);
         background: #fff;
         padding: 14px 16px;
         color: #40526d;
@@ -212,7 +223,7 @@
       }
       .mentored-item {
         border-radius: 18px;
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border: 1px solid rgba(0, 154, 223, 0.14);
         background: #fff;
         padding: 14px 16px;
       }
@@ -268,17 +279,17 @@
       }
     </style>
   </head>
-  <body class="bg-white text-brand-ink">
+  <body class="text-brand-ink">
     <div id="site-header"></div>
     <script src="header.js"></script>
 
     <main>
-      <section class="hero-entrance overflow-hidden border-b border-slate-200 bg-gradient-to-br from-brand-sky via-white to-white">
+      <section class="hero-entrance overflow-hidden border-b border-sky-100 bg-[linear-gradient(135deg,_rgba(236,248,255,0.96),_rgba(255,255,255,0.98)_42%,_rgba(127,215,255,0.22)_100%)]">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:py-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-14 lg:py-20">
           <div>
             <p class="text-sm font-medium text-slate-500" data-hero-item="crumb"><a href="index.html" class="hover:text-brand-blue">Home</a> / Services</p>
             <p class="mt-5 text-sm font-bold uppercase tracking-[0.24em] text-brand-blue" data-hero-item="crumb">Services</p>
-            <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.04] text-brand-navy sm:text-[2.8rem] lg:text-[3.6rem]" data-hero-item="title">IT Training and IT Outsourcing</h1>
+            <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.04] text-brand-blue sm:text-[2.8rem] lg:text-[3.6rem]" data-hero-item="title">IT Training and IT Outsourcing</h1>
             <div class="mt-5 max-w-3xl space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8" data-hero-item="copy">
               <p>We accommodate a wide range of industry-relevant IT training and certification needs. We ensure that participants gain in-depth understanding and practical expertise through dedicated mentoring in preparation for certification exams.</p>
               <p>We assist companies in sourcing and managing top-tier IT experts for both short-term and long-term engagements. Through our flexible outsourcing model, we ensure cost efficiency, high-quality performance, and data security.</p>
@@ -308,11 +319,11 @@
         </div>
       </section>
 
-      <section class="reveal bg-white py-14 sm:py-16 lg:py-20">
+      <section class="reveal bg-[linear-gradient(180deg,_rgba(255,255,255,0.94),_rgba(236,248,255,0.5))] py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div>
             <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">IT Training</p>
-            <h2 class="mt-3 text-3xl font-black text-brand-navy lg:text-[2.7rem]">Industry-relevant IT training and certification preparation.</h2>
+            <h2 class="mt-3 text-3xl font-black text-brand-blue lg:text-[2.7rem]">Industry-relevant IT training and certification preparation.</h2>
             <p class="mt-4 max-w-4xl text-lg leading-8 text-slate-600">We accommodate a wide range of industry-relevant IT training and certification needs. We ensure that participants gain in-depth understanding and practical expertise through dedicated mentoring in preparation for certification exams.</p>
           </div>
 
@@ -331,7 +342,7 @@
             <div class="domain-chart-layout">
               <div class="max-w-xl">
                 <p class="kicker text-sm font-extrabold uppercase tracking-[0.18em]">Domain Training</p>
-                <h3 class="mt-3 text-2xl font-black text-brand-navy">IT Training Domain</h3>
+                <h3 class="mt-3 text-2xl font-black text-brand-blue">IT Training Domain</h3>
                 <p class="detail-copy mt-4 text-lg leading-8">DigiTalent accommodates a broad range of industry-relevant training domains to support both foundational capability building and specialized professional development.</p>
               </div>
               <div class="mt-8 lg:mt-0">
@@ -342,10 +353,10 @@
             </div>
           </div>
 
-          <div class="reveal mt-8 rounded-[30px] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <div class="reveal mt-8 rounded-[30px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft sm:p-8">
             <div class="max-w-3xl">
               <p class="kicker text-sm font-extrabold uppercase tracking-[0.18em]">Mentored Learning</p>
-              <h3 class="mt-3 text-2xl font-black text-brand-navy">A structured learning model for practical capability development.</h3>
+              <h3 class="mt-3 text-2xl font-black text-brand-blue">A structured learning model for practical capability development.</h3>
             </div>
             <div class="mt-6 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div class="rounded-[26px] border border-slate-200 bg-white p-3 shadow-soft">
@@ -389,11 +400,11 @@
         </div>
       </section>
 
-      <section class="reveal border-y border-slate-200 bg-slate-50 py-14 sm:py-16 lg:py-20">
+      <section class="reveal border-y border-brand-blue/10 bg-[linear-gradient(180deg,_rgba(236,248,255,0.92),_rgba(255,255,255,0.98))] py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div>
             <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">IT Outsourcing</p>
-            <h2 class="mt-3 text-3xl font-black text-brand-navy lg:text-[2.7rem]">Top-tier IT experts for short-term and long-term engagements.</h2>
+            <h2 class="mt-3 text-3xl font-black text-brand-blue lg:text-[2.7rem]">Top-tier IT experts for short-term and long-term engagements.</h2>
             <p class="mt-4 max-w-4xl text-lg leading-8 text-slate-600">We assist companies in sourcing and managing top-tier IT experts for both short-term and long-term engagements. Through our flexible outsourcing model, we ensure cost efficiency, high-quality performance, and data security.</p>
           </div>
 
@@ -408,35 +419,35 @@
             </article>
           </div>
 
-          <div class="reveal mt-8 rounded-[30px] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <div class="reveal mt-8 rounded-[30px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft sm:p-8">
             <div class="max-w-3xl">
               <p class="kicker text-sm font-extrabold uppercase tracking-[0.18em]">Talent Profiles</p>
-              <h3 class="mt-3 text-2xl font-black text-brand-navy">Deployment-ready roles for operational and project needs.</h3>
+              <h3 class="mt-3 text-2xl font-black text-brand-blue">Deployment-ready roles for operational and project needs.</h3>
             </div>
             <div class="profile-grid mt-6">
               <article class="section-card rounded-[24px] p-5">
-                <h4 class="text-xl font-black text-brand-navy">Dedicated IT Staff</h4>
+                <h4 class="text-xl font-black text-brand-blue">Dedicated IT Staff</h4>
                 <p class="detail-copy mt-3 leading-7">Programmers, Network Engineers, and Data Analysts ready for direct business deployment.</p>
               </article>
               <article class="section-card rounded-[24px] p-5">
-                <h4 class="text-xl font-black text-brand-navy">Managed IT Services</h4>
+                <h4 class="text-xl font-black text-brand-blue">Managed IT Services</h4>
                 <p class="detail-copy mt-3 leading-7">Managed operational support for stable and flexible IT service execution.</p>
               </article>
               <article class="section-card rounded-[24px] p-5">
-                <h4 class="text-xl font-black text-brand-navy">Technical Support & Maintenance</h4>
+                <h4 class="text-xl font-black text-brand-blue">Technical Support & Maintenance</h4>
                 <p class="detail-copy mt-3 leading-7">Technical support and maintenance to sustain reliable day-to-day operations.</p>
               </article>
               <article class="section-card rounded-[24px] p-5">
-                <h4 class="text-xl font-black text-brand-navy">Project-Based IT Teams</h4>
+                <h4 class="text-xl font-black text-brand-blue">Project-Based IT Teams</h4>
                 <p class="detail-copy mt-3 leading-7">Focused IT teams aligned to defined scope, delivery target, and project timeline.</p>
               </article>
             </div>
           </div>
 
-          <div class="reveal mt-8 rounded-[30px] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <div class="reveal mt-8 rounded-[30px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft sm:p-8">
             <div class="max-w-3xl">
               <p class="kicker text-sm font-extrabold uppercase tracking-[0.18em]">Professional Selection Process</p>
-              <h3 class="mt-3 text-2xl font-black text-brand-navy">Structured validation to reduce hiring risk and speed deployment.</h3>
+              <h3 class="mt-3 text-2xl font-black text-brand-blue">Structured validation to reduce hiring risk and speed deployment.</h3>
             </div>
             <div class="selection-grid mt-6">
               <div class="mentored-item">

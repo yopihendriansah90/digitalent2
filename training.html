@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>Training - DigiTalent</title>
     <meta name="description" content="Pilihan training DigiTalent berdasarkan domain IT dan model pembelajaran mentored learning." />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,78 +20,88 @@
                 cyan: "#7fd7ff",
                 sky: "#ecf8ff",
                 orange: "#f3a836",
+                peach: "#fff1df",
+                cream: "#fff8ef",
                 ink: "#10233c",
               },
             },
-            boxShadow: { soft: "0 24px 60px rgba(9, 70, 138, 0.12)" },
+            boxShadow: { soft: "0 28px 70px rgba(9, 70, 138, 0.12)" },
           },
         },
       };
     </script>
-    <style>body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }</style>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(0, 154, 223, 0.12), transparent 24%),
+          radial-gradient(circle at top right, rgba(127, 215, 255, 0.18), transparent 30%),
+          linear-gradient(180deg, #fafdff 0%, #ffffff 100%);
+      }
+    </style>
   </head>
-  <body class="bg-white text-brand-ink">
+  <body class="text-brand-ink">
     <div id="site-header"></div>
     <script src="header.js"></script>
 
     <main>
-      <section class="bg-gradient-to-br from-brand-sky via-white to-white py-14 lg:py-20">
+      <section class="border-b border-sky-100 bg-[linear-gradient(135deg,_rgba(236,248,255,0.96),_rgba(255,255,255,0.98)_42%,_rgba(127,215,255,0.22)_100%)] py-14 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <p class="text-sm font-medium text-slate-500"><a href="index.html" class="hover:text-brand-blue">Home</a> / Training</p>
           <p class="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Pilihan Training</p>
-          <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.05] text-brand-navy sm:text-[2.8rem] lg:text-[3.5rem]">Training catalog structured by domain, learning format, and industry relevance.</h1>
+          <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.05] text-brand-blue sm:text-[2.8rem] lg:text-[3.5rem]">Training catalog structured by domain, learning format, and industry relevance.</h1>
           <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">Halaman ini disusun mengikuti draf PDF. Tautan detail katalog training dapat diarahkan ke Google Drive ketika file final sudah tersedia.</p>
         </div>
       </section>
 
-      <section class="py-14 lg:py-20">
+      <section class="bg-[linear-gradient(180deg,_rgba(255,255,255,0.94),_rgba(236,248,255,0.5))] py-14 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 01</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">GRC</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">GRC</h2>
               <p class="mt-3 leading-7 text-slate-600">Governance, Risk, & Compliance programs for security and regulatory readiness.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 02</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">IT Operations</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">IT Operations</h2>
               <p class="mt-3 leading-7 text-slate-600">Infrastructure, system operations, and operational reliability learning paths.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 03</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">IT Architecture</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">IT Architecture</h2>
               <p class="mt-3 leading-7 text-slate-600">Architecture design programs for scalable and business-aligned systems.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 04</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">Software Development</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">Software Development</h2>
               <p class="mt-3 leading-7 text-slate-600">Practical software engineering programs from foundations to advanced delivery.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 05</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">Cybersecurity</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">Cybersecurity</h2>
               <p class="mt-3 leading-7 text-slate-600">Training for cyber defense, threat awareness, and security implementation.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 06</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">Management & IT BA</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">Management & IT BA</h2>
               <p class="mt-3 leading-7 text-slate-600">Programs for business analysis, governance, and managerial IT capability.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 07</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">Project Management</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">Project Management</h2>
               <p class="mt-3 leading-7 text-slate-600">Project planning, delivery control, and execution management for IT teams.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
-            <a class="rounded-[26px] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
+            <a class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft transition hover:-translate-y-1 hover:border-brand-blue" href="#">
               <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Domain 08</p>
-              <h2 class="mt-4 text-2xl font-black text-brand-navy">Data & Artificial Intelligence</h2>
+              <h2 class="mt-4 text-2xl font-black text-brand-blue">Data & Artificial Intelligence</h2>
               <p class="mt-3 leading-7 text-slate-600">Data analysis, AI literacy, and applied intelligence programs for modern teams.</p>
               <span class="mt-6 inline-flex text-sm font-bold text-brand-orange">Catalog Link Placeholder</span>
             </a>
@@ -99,7 +109,7 @@
         </div>
       </section>
 
-      <section class="bg-brand-navy py-14 text-white lg:py-18">
+      <section class="bg-[linear-gradient(135deg,_#09468a,_#0b6ebd_52%,_#009adf_100%)] py-14 text-white lg:py-18">
         <div class="mx-auto max-w-7xl px-4">
           <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-orange">Mentored Learning</p>
           <div class="mt-5 grid gap-5 md:grid-cols-5">

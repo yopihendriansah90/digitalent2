@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>Outsourcing - DigiTalent</title>
     <meta name="description" content="DigiTalent membantu perusahaan sourcing dan managing top-tier IT experts untuk kebutuhan jangka pendek maupun jangka panjang." />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,22 +20,32 @@
                 cyan: "#7fd7ff",
                 sky: "#ecf8ff",
                 orange: "#f3a836",
+                peach: "#fff1df",
+                cream: "#fff8ef",
                 ink: "#10233c",
               },
             },
-            boxShadow: { soft: "0 24px 60px rgba(9, 70, 138, 0.12)" },
+            boxShadow: { soft: "0 28px 70px rgba(9, 70, 138, 0.12)" },
           },
         },
       };
     </script>
-    <style>body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }</style>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(0, 154, 223, 0.12), transparent 24%),
+          radial-gradient(circle at top right, rgba(127, 215, 255, 0.18), transparent 30%),
+          linear-gradient(180deg, #fafdff 0%, #ffffff 100%);
+      }
+    </style>
   </head>
-  <body class="bg-white text-brand-ink">
+  <body class="text-brand-ink">
     <div id="site-header"></div>
     <script src="header.js"></script>
 
     <main>
-      <section class="bg-brand-navy py-14 text-white lg:py-20">
+      <section class="bg-[linear-gradient(135deg,_#09468a,_#0b6ebd_52%,_#009adf_100%)] py-14 text-white lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <p class="text-sm font-medium text-white/70"><a href="index.html" class="hover:text-white">Home</a> / Outsourcing</p>
           <p class="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-brand-orange">IT Outsourcing</p>
@@ -44,41 +54,41 @@
         </div>
       </section>
 
-      <section class="py-14 lg:py-20">
+      <section class="bg-[linear-gradient(180deg,_rgba(255,255,255,0.94),_rgba(236,248,255,0.5))] py-14 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <article class="rounded-[26px] border border-slate-200 p-6 shadow-soft">
-              <h2 class="text-2xl font-black text-brand-navy">Dedicated IT Staff</h2>
+            <article class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft">
+              <h2 class="text-2xl font-black text-brand-blue">Dedicated IT Staff</h2>
               <p class="mt-3 leading-7 text-slate-600">Programmers, Network Engineers, Data Analysts, and other deployment-ready professionals.</p>
             </article>
-            <article class="rounded-[26px] border border-slate-200 p-6 shadow-soft">
-              <h2 class="text-2xl font-black text-brand-navy">Managed IT Services</h2>
+            <article class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft">
+              <h2 class="text-2xl font-black text-brand-blue">Managed IT Services</h2>
               <p class="mt-3 leading-7 text-slate-600">Flexible service support for operational continuity and managed execution.</p>
             </article>
-            <article class="rounded-[26px] border border-slate-200 p-6 shadow-soft">
-              <h2 class="text-2xl font-black text-brand-navy">Technical Support & Maintenance</h2>
+            <article class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft">
+              <h2 class="text-2xl font-black text-brand-blue">Technical Support & Maintenance</h2>
               <p class="mt-3 leading-7 text-slate-600">Ongoing support, troubleshooting, and maintenance for business-critical systems.</p>
             </article>
-            <article class="rounded-[26px] border border-slate-200 p-6 shadow-soft">
-              <h2 class="text-2xl font-black text-brand-navy">Project-Based IT Teams</h2>
+            <article class="rounded-[26px] border border-brand-blue/15 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(236,248,255,0.82))] p-6 shadow-soft">
+              <h2 class="text-2xl font-black text-brand-blue">Project-Based IT Teams</h2>
               <p class="mt-3 leading-7 text-slate-600">Cross-functional teams for specific delivery objectives, scope, and timeline.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="bg-slate-50 py-14 lg:py-20">
+      <section class="bg-[linear-gradient(180deg,_rgba(236,248,255,0.92),_rgba(255,255,255,0.98))] py-14 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
           <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Professional Selection Process</p>
-              <h2 class="mt-4 text-3xl font-black text-brand-navy">Lower hiring risk with structured validation and deployment-ready talent.</h2>
+              <h2 class="mt-4 text-3xl font-black text-brand-blue">Lower hiring risk with structured validation and deployment-ready talent.</h2>
             </div>
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="rounded-[24px] bg-white p-5 shadow-soft">Pre-qualified talent with verified experience and certifications.</div>
-              <div class="rounded-[24px] bg-white p-5 shadow-soft">Faster onboarding with deployment-ready professionals.</div>
-              <div class="rounded-[24px] bg-white p-5 shadow-soft">Lower hiring risk through structured screening and validation.</div>
-              <div class="rounded-[24px] bg-white p-5 shadow-soft">Immediate productivity from teams prepared for real-world environments.</div>
+              <div class="rounded-[24px] border border-brand-blue/15 bg-white/90 p-5 shadow-soft">Pre-qualified talent with verified experience and certifications.</div>
+              <div class="rounded-[24px] border border-brand-blue/15 bg-white/90 p-5 shadow-soft">Faster onboarding with deployment-ready professionals.</div>
+              <div class="rounded-[24px] border border-brand-blue/15 bg-white/90 p-5 shadow-soft">Lower hiring risk through structured screening and validation.</div>
+              <div class="rounded-[24px] border border-brand-blue/15 bg-white/90 p-5 shadow-soft">Immediate productivity from teams prepared for real-world environments.</div>
             </div>
           </div>
         </div>
