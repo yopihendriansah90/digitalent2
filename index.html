@@ -128,6 +128,14 @@
         position: relative;
         overflow: hidden;
       }
+      /* Area foto hero memakai kolase 3 slot, bukan satu banner penuh.
+         Tujuannya agar visual terasa lebih hidup dan memberi cerita:
+         1) foto besar kiri = bukti utama aktivitas inti DigiTalent,
+         2) foto kanan atas = interaksi, energi, atau engagement peserta,
+         3) foto kanan bawah = skala event, kelas formal, atau kredibilitas delivery.
+         Komposisi ini tetap konsisten antara desktop dan mobile karena urutan slot
+         tidak berubah; yang berubah hanya tinggi dan kepadatan layout agar tetap nyaman
+         dibaca di layar kecil. */
       .hero-panel::before {
         content: "";
         position: absolute;
@@ -176,7 +184,7 @@
       .hero-proof-grid {
         display: grid;
         gap: 12px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr);
       }
       .hero-proof-item {
         border-radius: 20px;
@@ -316,6 +324,11 @@
           grid-column: 4 / span 2;
         }
       }
+      @media (min-width: 640px) {
+        .hero-proof-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero-entrance [data-hero-item],
@@ -342,7 +355,7 @@
 
     <main>
       <section class="hero-entrance overflow-hidden border-b border-sky-100 bg-[linear-gradient(135deg,_rgba(236,248,255,0.96),_rgba(255,255,255,0.98)_42%,_rgba(127,215,255,0.22)_100%)]">
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:py-14 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-14 lg:py-24">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:py-14 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-14 lg:py-24">
           <div>
             <h1 class="max-w-4xl text-[2.25rem] font-black leading-[1.02] text-brand-blue sm:text-[2.9rem] lg:text-[4.1rem]" data-hero-item="title">Empowering Digital Talent, Enabling Global Success</h1>
             <div class="mt-5 max-w-3xl space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8" data-hero-item="copy">
@@ -365,22 +378,50 @@
             </div>
           </div>
 
-          <div class="hero-panel hero-stack rounded-[36px] border border-slate-200 bg-white p-4 shadow-soft sm:p-5" data-hero-item="media">
+          <div class="hero-panel hero-stack rounded-[30px] border border-slate-200 bg-white p-4 shadow-soft sm:rounded-[36px] sm:p-5" data-hero-item="media">
             <div class="grid gap-4 sm:grid-cols-[1.02fr_0.98fr]">
+              <!-- Foto utama hero:
+                   Gunakan foto training/workshop paling representatif karena slot ini
+                   menjadi anchor visual utama.
+                   Rekomendasi isi:
+                   - aktivitas kelas atau workshop yang jelas,
+                   - peserta dan trainer terlihat,
+                   - suasana profesional dan aktif.
+                   Rekomendasi ukuran:
+                   - paling ideal rasio portrait tinggi atau semi-portrait,
+                   - minimal 1200 x 1600 px agar tetap aman saat di-crop pada desktop,
+                   - fokus subjek sebaiknya berada di area tengah-bawah foto karena mobile
+                     akan menampilkan tinggi foto yang lebih pendek. -->
               <div class="hero-photo-card rounded-[28px] sm:min-h-[450px]">
-                <div class="hero-photo hero-photo-primary min-h-[320px] rounded-[28px] sm:h-full" style="--photo: url('https://www.sgi-asia.co.id/Activities/Digitalization%20and%20Cyber%20Security%20Awareness.jpg')"></div>
-                <div class="hero-photo-meta">
+                <div class="hero-photo hero-photo-primary min-h-[260px] rounded-[28px] sm:min-h-[320px] sm:h-full" style="--photo: url('https://www.sgi-asia.co.id/Activities/Digitalization%20and%20Cyber%20Security%20Awareness.jpg')"></div>
+                <div class="hero-photo-meta hidden sm:block">
                   <p class="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-brand-cyan">Professional Training</p>
                   <p class="mt-2 text-lg font-bold leading-snug">Structured learning sessions designed for practical IT capability growth.</p>
                 </div>
               </div>
 
               <div class="flex flex-col gap-4">
+                <!-- Foto pendukung atas:
+                     Slot ini cocok untuk foto interaksi, engagement peserta, atau dinamika tim.
+                     Tujuannya memberi kesan human, aktif, dan tidak terlalu formal.
+                     Rekomendasi ukuran:
+                     - ideal rasio landscape sedang,
+                     - minimal 1200 x 900 px,
+                     - hindari foto yang terlalu kosong di sisi kiri/kanan karena area crop
+                       pada desktop cukup ketat. -->
                 <div class="hero-photo-card rounded-[28px]">
-                  <div class="hero-photo hero-photo-secondary-top min-h-[200px] rounded-[28px] sm:min-h-[214px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Training%20DevSecOps.jpg')"></div>
+                  <div class="hero-photo hero-photo-secondary-top min-h-[160px] rounded-[28px] sm:min-h-[214px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Training%20DevSecOps.jpg')"></div>
                 </div>
+                <!-- Foto pendukung bawah:
+                     Slot ini cocok untuk dokumentasi kelas formal, event, sertifikasi,
+                     atau group photo yang menunjukkan skala dan kredibilitas penyelenggaraan.
+                     Rekomendasi ukuran:
+                     - ideal rasio landscape sedang,
+                     - minimal 1200 x 900 px,
+                     - pilih foto dengan subjek grup di tengah agar tetap aman di desktop
+                       maupun mobile. -->
                 <div class="hero-photo-card rounded-[28px]">
-                  <div class="hero-photo hero-photo-secondary-bottom min-h-[200px] rounded-[28px] sm:min-h-[214px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Training%20CISA.jpg')"></div>
+                  <div class="hero-photo hero-photo-secondary-bottom min-h-[160px] rounded-[28px] sm:min-h-[214px]" style="--photo: url('https://www.sgi-asia.co.id/Activities/Training%20CISA.jpg')"></div>
                 </div>
                 <div class="flex flex-wrap gap-3">
                   <div class="hero-stat-chip">

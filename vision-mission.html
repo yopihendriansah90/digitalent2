@@ -31,12 +31,79 @@
       };
     </script>
     <style>
+      html { scroll-behavior: smooth; }
       body {
         font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
           radial-gradient(circle at top left, rgba(0, 154, 223, 0.12), transparent 24%),
           radial-gradient(circle at top right, rgba(127, 215, 255, 0.18), transparent 30%),
           linear-gradient(180deg, #fafdff 0%, #ffffff 100%);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 700ms ease, transform 700ms ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .section-shell {
+        position: relative;
+        overflow: hidden;
+      }
+      .section-shell::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 12% 16%, rgba(127, 215, 255, 0.18), transparent 18%),
+          radial-gradient(circle at 88% 22%, rgba(0, 154, 223, 0.12), transparent 22%);
+      }
+      .panel-card {
+        border: 1px solid rgba(0, 154, 223, 0.14);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(236, 248, 255, 0.82));
+        box-shadow: 0 18px 44px rgba(9, 70, 138, 0.08);
+      }
+      .mission-card {
+        position: relative;
+        border: 1px solid rgba(0, 154, 223, 0.14);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(236, 248, 255, 0.78));
+        box-shadow: 0 18px 44px rgba(9, 70, 138, 0.08);
+        transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      }
+      .mission-card::before {
+        content: "";
+        position: absolute;
+        left: 22px;
+        top: 0;
+        width: 74px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f3a836 0 45%, #009adf 45% 100%);
+      }
+      .mission-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 154, 223, 0.24);
+        box-shadow: 0 24px 52px rgba(9, 70, 138, 0.12);
+      }
+      .mission-index {
+        color: #f3a836;
+      }
+      .mission-title {
+        color: #09468a;
+      }
+      .mission-copy {
+        color: #5b6880;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
       }
     </style>
   </head>
@@ -45,46 +112,86 @@
     <script src="header.js"></script>
 
     <main>
-      <section class="bg-[linear-gradient(135deg,_#09468a,_#0b6ebd_52%,_#009adf_100%)] py-14 text-white lg:py-20">
-        <div class="mx-auto max-w-7xl px-4">
-          <p class="text-sm font-medium text-white/70"><a href="index.html" class="hover:text-white">Home</a> / Vision & Mission</p>
-          <p class="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-brand-orange">Vision & Mission</p>
-          <h1 class="mt-4 max-w-4xl text-[2.15rem] font-black leading-[1.05] sm:text-[2.8rem] lg:text-[3.5rem]">Direction, operating principles, and long-term purpose behind DigiTalent.</h1>
-        </div>
-      </section>
-
-      <section class="bg-[linear-gradient(180deg,_rgba(255,255,255,0.94),_rgba(236,248,255,0.5))] py-14 lg:py-20">
-        <div class="mx-auto max-w-7xl px-4">
-          <div class="rounded-[32px] border border-brand-blue/15 bg-[linear-gradient(135deg,_rgba(236,248,255,0.96),_rgba(255,255,255,0.98)_42%,_rgba(127,215,255,0.22)_100%)] p-8 shadow-soft sm:p-10">
-            <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Vision</p>
-            <p class="mt-4 text-2xl font-black leading-tight text-brand-blue sm:text-3xl">To be the leading strategic partner in developing and providing superior, innovative, and globally competitive digital talent to support international-standard digital transformation.</p>
+      <section class="section-shell border-b border-sky-100 bg-[linear-gradient(135deg,_rgba(236,248,255,0.96),_rgba(255,255,255,0.98)_42%,_rgba(127,215,255,0.22)_100%)] reveal">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:py-14 lg:py-16">
+          <p class="text-sm font-medium text-slate-500"><a href="index.html" class="hover:text-brand-blue">Home</a> / Vision & Mission</p>
+          <p class="mt-5 text-sm font-bold uppercase tracking-[0.24em] text-brand-blue">Vision & Mission</p>
+          <div class="mt-4 grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+            <h1 class="max-w-4xl text-[2.1rem] font-black leading-[1.05] text-brand-blue sm:text-[2.7rem] lg:text-[3.5rem]">Direction, operating principles, and long-term purpose behind DigiTalent.</h1>
+            <p class="max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">Halaman ini merangkum visi jangka panjang dan misi operasional DigiTalent dalam mendukung transformasi digital melalui talenta yang unggul, inovatif, dan siap industri.</p>
           </div>
         </div>
       </section>
 
-      <section class="bg-[linear-gradient(180deg,_rgba(236,248,255,0.92),_rgba(255,255,255,0.98))] py-14 lg:py-20">
+      <section class="section-shell reveal bg-[linear-gradient(180deg,_rgba(255,255,255,0.94),_rgba(236,248,255,0.55))] py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1fr_0.96fr] lg:items-start lg:gap-12">
+          <div class="space-y-6">
+            <article class="panel-card rounded-[28px] p-7 sm:p-8">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Vision</p>
+              <p class="mt-4 text-[1.35rem] font-black leading-[1.5] text-brand-blue sm:text-[1.6rem] sm:leading-[1.55]">To be the leading strategic partner in developing and providing superior, innovative, and globally competitive digital talent to support international-standard digital transformation.</p>
+            </article>
+
+            <article class="panel-card rounded-[28px] p-7 sm:p-8">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">What It Means</p>
+              <p class="mt-4 text-lg leading-8 text-slate-600">DigiTalent positions itself as a long-term partner that not only prepares digital professionals, but also helps organizations secure the right talent, the right capability model, and the right operational mindset for sustainable transformation.</p>
+            </article>
+          </div>
+
+          <aside class="space-y-5">
+            <div class="panel-card rounded-[30px] p-6 sm:p-7">
+              <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Strategic Direction</p>
+              <div class="mt-5 grid gap-3">
+                <div class="rounded-2xl border border-brand-blue/15 bg-white/90 px-4 py-4">
+                  <p class="text-lg font-bold text-brand-navy">Superior Talent</p>
+                  <p class="mt-1 leading-7 text-slate-600">Developing professionals with strong capability, quality, and readiness for real-world execution.</p>
+                </div>
+                <div class="rounded-2xl border border-brand-blue/15 bg-white/90 px-4 py-4">
+                  <p class="text-lg font-bold text-brand-navy">Innovative Delivery</p>
+                  <p class="mt-1 leading-7 text-slate-600">Building adaptive systems for training, recruitment, and technology services that remain relevant to evolving industry needs.</p>
+                </div>
+                <div class="rounded-2xl border border-brand-blue/15 bg-white/90 px-4 py-4">
+                  <p class="text-lg font-bold text-brand-navy">Global Competitiveness</p>
+                  <p class="mt-1 leading-7 text-slate-600">Aligning digital talent development with international standards and business expectations.</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-shell reveal bg-[linear-gradient(180deg,_rgba(236,248,255,0.9),_rgba(255,255,255,0.98))] py-14 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-4">
-          <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Mission</p>
+          <div class="max-w-3xl">
+            <p class="text-sm font-bold uppercase tracking-[0.22em] text-brand-blue">Mission</p>
+            <h2 class="mt-3 text-3xl font-black text-brand-blue lg:text-[2.7rem]">Five commitments guiding how DigiTalent operates.</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600">Semua poin di bawah mengikuti konten inti dari draft website dan diterjemahkan ke format yang lebih terstruktur secara visual.</p>
+          </div>
+
           <div class="mt-8 grid gap-5 lg:grid-cols-2">
-            <article class="rounded-[26px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft">
-              <p class="text-sm font-extrabold text-brand-orange">01</p>
-              <p class="mt-4 leading-7 text-slate-600">Provide high-quality IT training and certification programs to produce job-ready digital talent that meets global standards.</p>
+            <article class="mission-card rounded-[26px] p-6 pt-7">
+              <p class="mission-index text-sm font-extrabold">01</p>
+              <h3 class="mission-title mt-4 text-[1.6rem] font-black leading-tight">High-Quality Training</h3>
+              <p class="mission-copy mt-4 text-lg leading-8">Provide high-quality IT training and certification programs to produce job-ready digital talent that meets global standards.</p>
             </article>
-            <article class="rounded-[26px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft">
-              <p class="text-sm font-extrabold text-brand-orange">02</p>
-              <p class="mt-4 leading-7 text-slate-600">Establish a professional and reliable outsourcing ecosystem to fulfill the human resource and IT solution needs of partner companies.</p>
+            <article class="mission-card rounded-[26px] p-6 pt-7">
+              <p class="mission-index text-sm font-extrabold">02</p>
+              <h3 class="mission-title mt-4 text-[1.6rem] font-black leading-tight">Reliable Ecosystem</h3>
+              <p class="mission-copy mt-4 text-lg leading-8">Establish a professional and reliable outsourcing ecosystem to fulfill the human resource and IT solution needs of our partner companies.</p>
             </article>
-            <article class="rounded-[26px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft">
-              <p class="text-sm font-extrabold text-brand-orange">03</p>
-              <p class="mt-4 leading-7 text-slate-600">Forge strategic collaborations with industries, educational institutions, and government to strengthen the national digital talent supply.</p>
+            <article class="mission-card rounded-[26px] p-6 pt-7">
+              <p class="mission-index text-sm font-extrabold">03</p>
+              <h3 class="mission-title mt-4 text-[1.6rem] font-black leading-tight">Strategic Collaboration</h3>
+              <p class="mission-copy mt-4 text-lg leading-8">Forge strategic collaborations with industries, educational institutions, and the government to strengthen the national digital talent supply.</p>
             </article>
-            <article class="rounded-[26px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft">
-              <p class="text-sm font-extrabold text-brand-orange">04</p>
-              <p class="mt-4 leading-7 text-slate-600">Drive continuous innovation in learning systems, recruitment processes, and technology project execution.</p>
+            <article class="mission-card rounded-[26px] p-6 pt-7">
+              <p class="mission-index text-sm font-extrabold">04</p>
+              <h3 class="mission-title mt-4 text-[1.6rem] font-black leading-tight">Continuous Innovation</h3>
+              <p class="mission-copy mt-4 text-lg leading-8">Drive continuous innovation in learning systems, recruitment processes, and technology project execution.</p>
             </article>
-            <article class="rounded-[26px] border border-brand-blue/15 bg-white/92 p-6 shadow-soft lg:col-span-2">
-              <p class="text-sm font-extrabold text-brand-orange">05</p>
-              <p class="mt-4 leading-7 text-slate-600">Uphold integrity, professionalism, and client satisfaction in every training and technology service delivered.</p>
+            <article class="mission-card rounded-[26px] p-6 pt-7 lg:col-span-2">
+              <p class="mission-index text-sm font-extrabold">05</p>
+              <h3 class="mission-title mt-4 text-[1.6rem] font-black leading-tight">Integrity and Satisfaction</h3>
+              <p class="mission-copy mt-4 text-lg leading-8">Uphold integrity, professionalism, and client satisfaction in every training and technology service delivered.</p>
             </article>
           </div>
         </div>
@@ -93,5 +200,23 @@
 
     <div id="site-footer"></div>
     <script src="footer.js"></script>
+    <script>
+      const revealElements = document.querySelectorAll(".reveal");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!reduceMotion && "IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.16 });
+
+        revealElements.forEach((element) => revealObserver.observe(element));
+      } else {
+        revealElements.forEach((element) => element.classList.add("is-visible"));
+      }
+    </script>
   </body>
 </html>

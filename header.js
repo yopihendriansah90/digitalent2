@@ -10,9 +10,9 @@ if (headerMount) {
     ["services.html", "Services"],
     ["vision-mission.html", "Vision & Mission"],
     ["portfolio.html", "Client / Portfolio"],
-    ["contact.html", "Contact"],
     ["training.html", "Training"],
     ["outsourcing.html", "Outsourcing"],
+    ["contact.html", "Contact"],
   ];
 
   const navLinks = navItems
